@@ -1,125 +1,41 @@
 ---
 title: "Using RMarkdown"
-teaching: 10
-exercises: 2
+teaching: 0
+exercises: 0
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
++ What is Quarto and how can it be used to publish data?
++ What Options does Quarto give to customize your experience?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
++ Give an overview about Quarto and its features
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+::::::::::::: discussion
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+### Discussion: What program or enviroment do you use for the creation and publishing of scientific papers?
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson template:
+::::::::::::::::::::
 
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+## What is Quarto?
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+There are many differnt environments used for the writing, editing and publishing of scientific papers and data. Ech offers a different emphasis on different features, quality of life improvments and backgrounds.
+The right tools and environment are essention for a clean and effective workflow. Quarto stands as an effective allrounder when it comes to the different stages and functionalities needed in the creatin of scientfic papers.
+Quarto is a free, open-source tool, made with the purpose of refining and improving the creation of technical and scientific documents. It utilized a plethora of integrated options, that create an environment where users can create multi-format documents, that can easily be converted between MSWord, HTML or LaTeX. 
+The wide array of integrated functions, such as the implementation of code and visulizations, the easy convertability of documents and the integrated citation management system offer the user a concise and easy to understand working environment.
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+::::::::::::::::::::::::::::::::::::: Core features of Quarto
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Can you do it?
-
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
-:::::::::::::::::::::::: solution 
-
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
-
-:::::::::::::::::::::::::::::::::
-
-
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
+Some of the core features discussed in this lesson are:
++ Creation of easily convertible .qmd files using Markdown and Pandoc
++ Multi-format display of data
++ Integration and display of code and illustrations in multiple coding languages
++ Built-in bibliography feature using automatic recognition and manual input
+  
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Figures
-
-You can also include figures generated from R Markdown:
-
-```{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
-pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
-  init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
-  border = FALSE
-)
-```
-
-Or you can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-## Math
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
-
-::::::::::::::::::::::::::::::::::::: keypoints 
-
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-[r-markdown]: https://rmarkdown.rstudio.com/
