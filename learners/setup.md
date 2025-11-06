@@ -2,53 +2,25 @@
 title: Setup
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
-
-## Data Sets
-
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
+Quarto can be used through a variety of Coding environments, such as Visual Studio Code, RStudio or a simple Plaintext editor. In this Lesson we will focus on the use of Visual Studio Code, but many if not most functionalities will be similar or identical in other environments.
 
 ## Software Setup
 
 ::::::::::::::::::::::::::::::::::::::: discussion
 
-### Details
+As we are working in the Visual Studio Code environment, the only step needed to start working with Quarto is the installation and activation of the Quarto extension in VSCode. To do so you need to open the Extension tab in VS Code (Crtl+Shift+X on Windows) and search for Quarto. Now you only need to press “install” in order to activate Quarto in your VSCode.
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
+![](https://pad.zdv.net/uploads/25883e20-b9f2-4be2-b84f-162bd0d14e30.png)
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::: spoiler
-
-### Windows
-
-Use PuTTY
-
 ::::::::::::::::::::::::
 
-:::::::::::::::: spoiler
+## Getting Help
 
-### MacOS
+If you encounter problems installing or running Quarto, a good source of support is the [offical webpage of Quarto](https://quarto.org/docs/guide/). Here you can find a plethora of guides and information.
 
-Use Terminal.app
+You may also want to check the Stack Overflow [Quarto] tag.
+
 
 ::::::::::::::::::::::::
-
-
-:::::::::::::::: spoiler
-
-### Linux
-
-Use Terminal
-
-::::::::::::::::::::::::
-
