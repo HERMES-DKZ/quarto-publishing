@@ -1,5 +1,5 @@
 ---
-title: "Using RMarkdown"
+title: "A brief introduction to Quarto"
 teaching: 0
 exercises: 0
 ---
