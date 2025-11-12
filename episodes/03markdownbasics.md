@@ -4,20 +4,20 @@ teaching: 0
 exercises: 1
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+::: questions 
 
 - What is Markdown?
 - How do you use Markdown to write in Quarto?
 - What are the most common parts of Markdown syntax?
   
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::::::::::::::::::::::::::::::::::::: objectives
+::: objectives
 
 - Know the basic Markdown syntax.
 - Know how to write a simple text, containing a variety of Markdown syntax.
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
 In order to use the source mode of Quarto, one needs to be able to write a document using the Markdown programming language. 
 The relative simplicity and straightforardness of Markdown makes it one of the ideal programming languages for beginners. It is use by a variety of programms and exists in the background of most modern text based programms.
@@ -119,17 +119,17 @@ Some of the most useful parts of Markdown syntax are shown here:
 
 </html>
 
-::: Challange
+::: challenge
 
-#### Exercise:
+### Exercise:
 
 Use your newly aquired knowledge in Markdown to fill your still empty Quarto documents with text.
 Try to use a variety of features stuch as pictures or line breaks, be creative!
 :::
 
-::: 
-#### Some Help
+::: caution
+### Some Help
 
-Should you need some helpü with Markdown or want to deepen your understanding of this extremely usefull language, there are a plethora of websites aimed at helping newcomers learn all there is about Matkdown.
+Should you need some help with Markdown or want to deepen your understanding of this extremely usefull language, there are a plethora of websites aimed at helping newcomers learn all there is about Matkdown.
 Websites like [MarkdownGuide](https://www.markdownguide.org/) offer a wide variety of guides, cheat sheets and help.
 :::
