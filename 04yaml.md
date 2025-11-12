@@ -14,7 +14,6 @@ exercises: 1
 
 ::: objectives
 
-- Know how to implement and use a YAML header
 - Know what Key-Value pairs to use in a scientific paper.
 - Know how to implement a detailled YAML header for a scientific paper.
 
