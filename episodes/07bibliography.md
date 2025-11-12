@@ -4,25 +4,27 @@ teaching: 0
 exercises: 1
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+::: questions 
 
 - What os the bibliography feature in Quarto?
 - How do you use and expand the bibliography and citations?
 - How do you implement footnotes?
   
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::::::::::::::::::::::::::::::::::::: objectives
+::: objectives
 
 - Learn the basics of citations and footnotes in Quarto.
 - Create and expand your own bibliography and implement it in your document.
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
 One of the most important aspects of scientific publishing is the inclusion and organisation of sources,. citations and footnotes. These are all included in Quarto, which offers an integrated menu to organize and implement Citation from a variety of different sources.
 
-::: Callout
+::: callout
+
 For this part of the lesson, we will switch from Source Mode to Visual Mode, in order to offer you an easier to understand guide on how to use these.
+
 :::
 
 ## Footnotes:
@@ -74,7 +76,8 @@ Using the reference feature will also create a reference index at the bottom of 
 The result could look something like this:
 ![](https://pad.zdv.net/uploads/ac0a8052-eab4-4bb9-8a88-6fd106b1c310.png)
 
-::: challange
-#### Exercise: 
-Lastly use the Reference and Footnote features to enrich your document with citations. Create and fill out a bibliography and render your document one last time.
+::: challenge
+### Exercise
+Use the **References** and **Footnote** features to enrich your document with citations.  
+Create and fill out a bibliography, then render your document one last time.
 :::
