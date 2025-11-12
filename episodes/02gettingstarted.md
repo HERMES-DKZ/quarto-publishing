@@ -58,7 +58,7 @@ This will have two effects:
 1. It will create a new file in your "Quarto-Lesson" folder, corresponding to your chosen format. ![](https://pad.zdv.net/uploads/a2c11153-53a8-45c5-b101-113a2c489229.png)
 2. It will split your screen and show you your preview on the right side of VSCode. ![](https://pad.zdv.net/uploads/301d36e7-af93-4a55-9eef-b8de7f00921b.png)
 
-::: challange
+::: challenge
 ### Exercise:
 Create a new folder called "Quarto_lesson" and open it in VSCode. Open a new Quarto document in VSCode and save it in your newly created folder.
 :::
