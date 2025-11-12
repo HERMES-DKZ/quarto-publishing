@@ -4,20 +4,20 @@ teaching: 0
 exercises: 1
 ---
 
-::::::::::::::::::::::::::::::::::::: questions
+::: questions
 
 + How do i open a new Quarto document?
 + What editing modes exist?
 + How do i switch between modes?
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::::::::::::::::::::::::::::::::::::: objectives
+::: objectives
 
 + Open a new Quarto document.
 + Switch between editing modes
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
 ## Opening a Quarto Document
 
@@ -41,12 +41,12 @@ The source layout lacks the visual interface but includes the underlying markdow
 
 Neither of the two environments are inherently better then the other. We will be working with both the source and the visual layout of Quarto. You will be shown the correct ways of selecting the needed options in the visual interface and how to write the needed code in the source code of the document.
 
-:::::::::::::::::::::::::::::::::::::: callout
+::: callout
 
 You can easily switch between the two editing modes by right clicking on your screen and selecting "Edit in Visual/Source Mode". This will instantly switch you over. In this Lesson we will continue to work with Source Mode.
 ![](https://pad.zdv.net/uploads/d708a000-4732-4942-9389-f30bb79583fa.png)
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
 ## Rendering Your document
 
@@ -59,7 +59,7 @@ This will have two effects:
 2. It will split your screen and show you your preview on the right side of VSCode. ![](https://pad.zdv.net/uploads/301d36e7-af93-4a55-9eef-b8de7f00921b.png)
 
 ::: challange
-#### Exercise:
+### Exercise:
 Create a new folder called "Quarto_lesson" and open it in VSCode. Open a new Quarto document in VSCode and save it in your newly created folder.
 :::
 
