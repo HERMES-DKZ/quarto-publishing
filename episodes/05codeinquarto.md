@@ -4,15 +4,15 @@ teaching: 0
 exercises: 2
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+::: questions 
 
 - How do you implement code in Quarto?
 - How to use code to create visualisations and graphs?
 - How do you annotate visualisations?
   
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::::::::::::::::::::::::::::::::::::: objectives
+::: objectives
 
 - Implement Python, Mermaid and Graphviz code in your Quarto document.
 - Create Visualisations of Python code using plotly.
@@ -20,14 +20,14 @@ exercises: 2
 - Create a flowchart in Quarto using Graphviz.
 - Enrich your generated Visualisations by adding format and information in comments.
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
 Quarto can be used to both show and render code in a newly created document. One can basically program directly in quarto, using ones preferred coding language, and have the data rendered directly in the pdf or html document.
 In order to do so you need to simply insert your code into the document.
 In this lesson we will mostly implement python code, as well as several integrated coding languages.
 
 ::: callout
-#### Note:
+### Note:
 By default, code inserted via Markdown will be shown as code blocks in the rendered document. If you want to use collapsable or hidden code blocks in your renders, simply add 'code-fold: true' to your YAML section.
 
 One can not only insert code into one’s documents, but also directly visualize it in order to create illustrations based on the inserted code. 
@@ -48,7 +48,7 @@ You simply need to insert the following part into your Quarto document in order 
 <p>```</p>
 <p><br></p>
 
-::::: caution 
+::: caution 
 For our example we will insert a slightly modified version of the code used in the Python101 lesson:
 
 ```{Python}
@@ -73,12 +73,13 @@ fig.update_yaxes(title_text='Number of Artworks')
 
 fig.show()
 ```
+:::
 
 ::: solution
 ### Using this Code chuck in VSCode could look like the following example:
 ![](https://pad.zdv.net/uploads/1aaad49a-e618-486d-b63c-b368b59a3ce8.png)
 ::: 
-:::::
+
 
 
 ::: caution
@@ -99,7 +100,7 @@ In order to use Mermaid, simply put your mermaid text into the following part:
 <p>```</p>
 <p><br></p>
 
-::::: caution
+::: callout
 ### Creating a bar chart in Mermaid:
 A commonly used graph, which can be used and implemented to visualize a wide variety of data, is the barchart. It offers an easy and comprehensive form of displaying percentages and relative strength of different aspects of data. 
 A bar chart can be easyly oimplemented into a Quarto document using the implemented Mermaid language. As an example we have a pie chart, showing the relative distribution of pets adopted by volunteers. It is split into three categories: dogs, cats and rats. Each categorie is represented by an indented Key-Value pair, with the titles of each categorie fucntioning as the key. The value of each key contains the total number of the relevant pet adopted. 
@@ -112,13 +113,15 @@ pie title Pets adopted by volunteers
     "Rats" : 15
 
 ```
+:::
+
 ::: solution
 ### Here is an example of this Mermaid bar chart in your document: 
 ![](https://pad.zdv.net/uploads/72f7a66e-f829-4b69-aad7-e3ec50d922af.png)
 :::
-:::::
 
-::: challange
+
+::: challenge
 ### Exercise 1: Mermaid
 
 Try to create your own pie chart. Try out different numbers of categories and change the associated values to experiment on how the resulting graph will change.
@@ -135,7 +138,7 @@ Like with Mermaid, the simplest way to use Graphviz with Quarto is to use a [web
 <p><br></p>
 
 
-::::: caution
+::: callout
 ### Creating a flow chart in Graphviz:
 One of the possibilities Graphviz offers is the abilities to quickly create flow charts in your Quarto document. 
 As an example we will create a simple and small flow chart showing the process of coding in Quarto:
@@ -175,14 +178,16 @@ digraph G {
   }
 }
 ```
+:::
+
 ::: solution
 ### Here is an example of this Graphviz in your document: 
 ![](https://pad.zdv.net/uploads/ba70f6c0-391d-4ab5-b503-512cc2894344.png)
-)
-:::
-:::::
 
-::: challange
+:::
+
+
+::: challenge
 ### Exercise 2: Graphviz
 
 Try to create your own flow chart. Try out different numbers of categories and change the connections and directions to experiment on how the resulting flow chart will change.
@@ -193,7 +198,7 @@ Try to create your own flow chart. Try out different numbers of categories and c
 When implementing visualisations, it is always important to add relevant information in form of titles, descriptions etc to the chart.
 This can be done by inserting the relevant information into the relevant code chunk in form of comments.
 
-::: caution
+::: callout
 Here one can use the same commands that are also used for the sizing and descriptions of pictures and illustrations. An overview of the possibilities can be found [here](https://quarto.org/docs/authoring/figures.html)
 :::
 
@@ -213,7 +218,7 @@ pie title Pets adopted by volunteers
 ```
 
 ::: caution
-#### Caution:
+### Caution:
 
 Every Coding language has a different way of creating comments. The ones used in this Lesson are the following:
 
