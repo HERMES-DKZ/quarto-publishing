@@ -137,13 +137,15 @@ funding: If your research was funded it can be written here.
 
 :::
 
-::::: challange
-#### Exercise
+::: challenge
+### Exercise
 Try to create a detailed YAML header for your document and render it again to see the difference.
+:::
+
 ::: solution
-#### A possible Outcome:
+### A possible Outcome:
 Your newly rendered document could look like this:
 ![](https://pad.zdv.net/uploads/0f91830e-465b-4ac4-b6e8-93637d207d2c.png)
 :::
-:::::
+
 
