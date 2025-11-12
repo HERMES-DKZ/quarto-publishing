@@ -59,13 +59,13 @@ contact: 'steuhl@students.uni-mainz.de'
 
 # Order of episodes in your lesson
 episodes: 
-- 01. introduction.md
-- 02.gerttingstarted.Rmd
-- 03.markdownbasics.md
-- 04.yaml.md
-- 05.codeinquarto.md 
-- 06.pdfandhtml.md
-- 07.bibliography.md
+- 01introduction.md
+- 02gerttingstarted.md
+- 03markdownbasics.md
+- 04yaml.md
+- 05codeinquarto.md 
+- 06pdfandhtml.md
+- 07bibliography.md
 
 # Information for Learners
 learners: 
