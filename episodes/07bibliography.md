@@ -14,8 +14,8 @@ exercises: 1
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Learn the basics of citations and footnotes.
-- Create and expand your own bibliography.
+- Learn the basics of citations and footnotes in Quarto.
+- Create and expand your own bibliography and implement it in your document.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
