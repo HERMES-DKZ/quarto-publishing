@@ -4,21 +4,21 @@ teaching: 0
 exercises: 1
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+::: questions 
 
 - What is YAML?
 - How to use a YAML header?
 - What are the mnost useful Key-Value pairs for a scientofic paper?
   
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::::::::::::::::::::::::::::::::::::: objectives
+::: objectives
 
 - Know how to implement and use a YAML header
 - Know what Key-Value pairs to use in a scientific paper.
 - Know how to implement a detailled YAML header for a scientific paper.
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
 Many Quarto documents start with a so called YAML header. These headers contain fundamental information about the document and are used to concisely and easily configure metadata and appearance. While it is not necessary for the document to function, they are a useful way of integration metadata and appearance into your documents. 
 
@@ -41,8 +41,9 @@ title: Example
 format: html
     toc: true
 ```
+:::
 
-::: Callout
+::: callout
 
 #### YAML Keys:
 
@@ -109,7 +110,7 @@ funding: If your research was funded it can be written here.
 ---
 ```
 
-::::::::::::::::::::::::::::::::::::: callout
+::: callout
 
 ###' Callout: YAML Keys
 
@@ -134,9 +135,9 @@ funding: If your research was funded it can be written here.
 * `year`                 – Year of the copyright
 * `funding`              – If the publication received funding it can be mentioned here
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::: Challange
+::::: challange
 #### Exercise
 Try to create a detailed YAML header for your document and render it again to see the difference.
 ::: solution
@@ -144,5 +145,5 @@ Try to create a detailed YAML header for your document and render it again to se
 Your newly rendered document could look like this:
 ![](https://pad.zdv.net/uploads/0f91830e-465b-4ac4-b6e8-93637d207d2c.png)
 :::
-:::
+:::::
 
