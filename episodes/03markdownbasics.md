@@ -8,15 +8,14 @@ exercises: 1
 
 - What is Markdown?
 - How do you use Markdown to write in Quarto?
-- Whart are the most common parts of Markdown syntax?
+- What are the most common parts of Markdown syntax?
   
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Know the basic Markdown syntax.
-- Know how to write in Quarto using Markdown.
-- Know where to find further information on Markdown.
+- Know how to write a simple text, containing a variety of Markdown syntax.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -30,14 +29,7 @@ The implementation of picrtures is also possible to implement pictures in Markdo
 Some of the most useful parts of Markdown syntax are shown here:
 
 <html>
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
 <body>
-
-
 
 <table style="width:80%">
   <tr>
