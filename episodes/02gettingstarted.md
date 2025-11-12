@@ -61,6 +61,7 @@ This will have two effects:
 ::: challenge
 ### Exercise:
 Create a new folder called "Quarto_lesson" and open it in VSCode. Open a new Quarto document in VSCode and save it in your newly created folder.
+
 :::
 
 
