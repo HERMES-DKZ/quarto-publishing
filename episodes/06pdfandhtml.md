@@ -13,6 +13,8 @@ exercises: 1
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Implement specific characteristics in a PDf and HTML based Quarto document.
+- Implement format, font and documentclass characteristics in a PDF Quarto document.
+- Implement themes in a HTML Quarto document.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -20,7 +22,7 @@ Every different Format of Quarto has its own unique commands and output specific
 
 ## PDF
 
-In the Cade of a PDF, these mainly dictate things such as the font used, the dimensions of the pdf and the class of PDF used.
+In the case of a PDF, these mainly dictate things such as the font used, the dimensions of the PDF and the class of PDF used.
 
 A comprehensive overview over all possible YAML commands can be found [here](https://quarto.org/docs/reference/formats/pdf.html)
 
