@@ -3,20 +3,20 @@ title: "Quarto for PDF and HTML"
 teaching: 0
 exercises: 1
 ---
-:::::::::::::::::::::::::::::::::::::: questions 
+::: questions 
 
 - What unique options exists for PDFs in Quarto?
 - What unique iptions exists for HTML in Quarto?
   
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::::::::::::::::::::::::::::::::::::: objectives
+::: objectives
 
 - Implement specific characteristics in a PDf and HTML based Quarto document.
 - Implement format, font and documentclass characteristics in a PDF Quarto document.
 - Implement themes in a HTML Quarto document.
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
 Every different Format of Quarto has its own unique commands and output specific code. These are most often part of the YAML header.
 
@@ -105,9 +105,10 @@ The following example uses the two styles shown above:
 ![](https://pad.zdv.net/uploads/94c9e100-1544-4f23-ab14-c3a8fca8fa75.png)
 ![](https://pad.zdv.net/uploads/98065ef7-da80-4397-b997-5a6c00c84afa.png)
 
-::: challange
-#### Exercise:
+::: challenge
+### Exercise:
 Decide if you would like to continue with a PDF or HTML. Then try out the new YAML headers and options in your document. Be creative!
+
 :::
 
 
