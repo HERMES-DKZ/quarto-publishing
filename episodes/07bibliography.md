@@ -6,7 +6,7 @@ exercises: 1
 
 ::: questions 
 
-- What os the bibliography feature in Quarto?
+- What is the bibliography feature in Quarto?
 - How do you use and expand the bibliography and citations?
 - How do you implement footnotes?
   
