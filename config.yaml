@@ -60,7 +60,7 @@ contact: 'steuhl@students.uni-mainz.de'
 # Order of episodes in your lesson
 episodes: 
 - 01introduction.md
-- 02gerttingstarted.md
+- 02gettingstarted.md
 - 03markdownbasics.md
 - 04yaml.md
 - 05codeinquarto.md 
