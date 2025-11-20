@@ -771,7 +771,7 @@ any links that you are not going to use.
  -->
 </table></section><section id="aio-04yaml"><p>Content from <a href="04yaml.html">An introduction to YAML headers</a></p>
 <hr>
-<p>Last updated on 2025-11-12 |
+<p>Last updated on 2025-11-20 |
 
         <a href="https://hermes-dkz.github.io/quarto-publishing/edit/main/episodes/04yaml.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -816,21 +816,64 @@ integration metadata and appearance into your documents.</p>
 language most commonly used in configuration files. At its most
 rudimentary YAML uses easy to understand Key-Value pairs as a
 syntax.</p>
-<table style="width:6%;" class="table">
-<colgroup><col width="5%"></colgroup>
-<thead><tr class="header">
-<th>In Quarto a YAML block is signified by three Dashes above and below
+<hr>
+<p>In Quarto a YAML block is signified by three Dashes above and below
 the Code Block. In order to integrate a YAML header into your document,
 you need to insert the following block at the top of your document and
 fill the space between the dashes with relevant Key-Value pairs. Keys
 relevant for format and appearance will be shown in the relevant
-episodes!</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>title: How to write a YAML header format: pdf subtitle: An easy
-Guide with a good example date: 2025-08-01 type: education authors: -
-name: John Doe id: jd orcid: 0000 0000 0000 0000 email: <a href="mailto:john.doe@example.com" class="email">john.doe@example.com</a> url: author-website.com degrees:
+episodes!</p>
+<div class="Callout">
+<p>A Key-Value pair is created by pairing a predetermined key (such as
+name, title, date etc.) with a corresponding value. Sub-categories are
+created by in indenting the line with Tab.</p>
+</div>
+<div id="example-of-a-simple-yaml-header" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="example-of-a-simple-yaml-header" class="callout-inner">
+<h3 class="callout-title">Example of a simple YAML header</h3>
+<div class="callout-content">
+<p><code>{YAML} title: Example format: html     toc: true</code></p>
+</div>
+</div>
+</div>
+<div id="yaml-keys" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="yaml-keys" class="callout-inner">
+<h3 class="callout-title">YAML Keys:</h3>
+<div class="callout-content">
+<p><strong>title</strong>: Title of you paper/webpage/publication
+<strong>format</strong>: The format of your rendered document. There are
+a wide variety of formats to choose from. A detailed list can be found
+here: <a href="https://quarto.org/docs/output-formats/all-formats.html" class="external-link uri">https://quarto.org/docs/output-formats/all-formats.html</a>
+<strong>toc</strong>: Toc:true creates a simple table of contents for
+your website. the Heading you created via ‘#’ headings are used to
+create it.</p>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="yaml-hearders-for-scientific-publishing">YAML hearders for scientific publishing<a class="anchor" aria-label="anchor" href="#yaml-hearders-for-scientific-publishing"></a>
+</h2>
+<hr class="half-width">
+<p>In the following example you can see an assortment of YAML pairs,
+which are commonly used for the implementation of metadata in scientific
+articles. These pairs can contain a wide variety of information about
+the paper, its authors and its place of origin, as well as information
+on copyright, funding and other legal characteristics. Note that not all
+of the pairs are necessary, and many can be cut if they are not needed
+or available.</p>
+</section><section><h2 class="section-heading" id="yaml">```{YAML}<a class="anchor" aria-label="anchor" href="#yaml"></a>
+</h2>
+<hr class="half-width">
+<p>title: How to write a YAML header format: pdf subtitle: An easy Guide
+with a good example date: 2025-08-01 type: education authors: - name:
+John Doe id: jd orcid: 0000 0000 0000 0000 email: <a href="mailto:john.doe@example.com" class="email">john.doe@example.com</a> url: author-website.com degrees:
 Bachelor of Arts role: concept affiliation: - name: Example University
 city: Towncity region: Arearegion Country: Countryland url:
 univerity-website.com - name: Jane Public id: jp orcid: 1111 2222 3333
@@ -838,16 +881,10 @@ univerity-website.com - name: Jane Public id: jp orcid: 1111 2222 3333
 degrees: M.o.S. role: visuals affiliation: - name: XYZ Collage city:
 Villageville region: Random County Country: Republic of Example url:
 collage-page.com abstract: | A concice and easy to read abstract.
-keywords: - Example - Quarto - YAML - Headers</td>
-</tr>
-<tr class="even">
-<td>license: “CC BY ND” copyright: holder: John Doe year: 2025 funding:
-If your research was funded it can be written here.</td>
-</tr>
-</tbody>
-</table>
-<p>```</p>
-<div id="callout1" class="callout">
+keywords: - Example - Quarto - YAML - Headers</p>
+<p>license: “CC BY ND” copyright: holder: John Doe year: 2025 funding:
+If your research was funded it can be written here. — ```</p>
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -931,13 +968,18 @@ again to see the difference.</p>
   A possible Outcome:
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Your newly rendered document could look like this: <img src="https://pad.zdv.net/uploads/0f91830e-465b-4ac4-b6e8-93637d207d2c.png" class="figure"></p>
 </div>
 </div>
 </div>
-</div></section><section id="aio-05codeinquarto"><p>Content from <a href="05codeinquarto.html">Creating and implementing code for visualisations</a></p>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-05codeinquarto"><p>Content from <a href="05codeinquarto.html">Creating and implementing code for visualisations</a></p>
 <hr>
 <p>Last updated on 2025-11-12 |
 
@@ -1105,7 +1147,7 @@ pie title Pets adopted by volunteers
   Here is an example of this Mermaid bar chart in your document:
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img src="https://pad.zdv.net/uploads/72f7a66e-f829-4b69-aad7-e3ec50d922af.png" class="figure mx-auto d-block"></figure>
 </div>
@@ -1531,8 +1573,8 @@ any links that you are not going to use.
   "url": "https://quarto-publishing.github.io/NA/aio.html",
   "identifier": "https://quarto-publishing.github.io/NA/aio.html",
   "dateCreated": "2024-04-05",
-  "dateModified": "2025-11-19",
-  "datePublished": "2025-11-19"
+  "dateModified": "2025-11-20",
+  "datePublished": "2025-11-20"
 }
 
   </script><script>
