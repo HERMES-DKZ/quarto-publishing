@@ -24,6 +24,7 @@ Many Quarto documents start with a so called YAML header. These headers contain 
 YAML(short for "YAML Ain’t Markup Language") is a human readable data language most commonly used in configuration files. At its most rudimentary YAML uses easy to understand Key-Value pairs as a syntax.
 
 ----
+
 In Quarto a YAML block is signified by three Dashes above and below the Code Block.
 In order to integrate a YAML header into your document, you need to insert the following block at the top of your document and fill the space between the dashes with relevant Key-Value pairs. 
 Keys relevant for format and appearance will be shown in the relevant episodes!
@@ -33,7 +34,7 @@ A Key-Value pair is created by pairing a predetermined key (such as name, title,
 :::
 
 ::: callout
-#### Example of a simple YAML header
+### Example of a simple YAML header
 
 ```{YAML}
 title: Example
