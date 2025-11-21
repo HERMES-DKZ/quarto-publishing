@@ -47,9 +47,9 @@ A Key-Value pair is created by pairing a predetermined key (such as name, title,
 
 #### YAML Keys:
 
-**title**:    Title of you paper/webpage/publication
-**format**:   The format of your rendered document. There are a wide variety of formats to choose from. A detailed list can be found here: https://quarto.org/docs/output-formats/all-formats.html
-**toc**:      Toc:true creates a simple table of contents for your website. the Heading you created via '#' headings are used to create it.
+* `title:`               – Title of you paper/webpage/publication
+* `format:`              – The format of your rendered document. There are a wide variety of formats to choose from. A detailed list can be found here: https://quarto.org/docs/output-formats/all-formats.html
+* `toc:`                 – **Toc:true** creates a simple table of contents for your website. the Heading you created via '#' headings are used to create it.
 :::
 
 
