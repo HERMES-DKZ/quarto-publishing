@@ -537,7 +537,7 @@ the percentage of the categorie relevant to all adopted pets.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">mermaid</span></span>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{mermaid}</span></span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">pie</span> title Pets adopted by volunteers</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="st">"Dogs"</span> : 386</span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    <span class="st">"Cats"</span> : 85</span>
@@ -619,7 +619,7 @@ same rank.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">dot</span></span>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{dot}</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">digraph</span> G {</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="ex">code</span> [</span>
@@ -707,14 +707,20 @@ also use a Key-Value pair, this time with the Key “fig-cap”. This will
 create a caption for our illiustration. lastly we want to limit how wide
 our newly created graph will be when displayed. This can be done by
 adding a third Key-Value pair, this time with the “fig-width” key.</p>
-<pre class="mermaid"><code>
-pie title Pets adopted by volunteers
-    "Dogs" : 386
-    "Cats" : 85
-    "Rats" : 15
-%%| label: Illustration 1
-%%| fig-cap: "Animal adoptio through volunteers."
-%%| fig-width: 6.5</code></pre>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{mermaid}</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="ex">pie</span> title Pets adopted by volunteers</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="st">"Dogs"</span> : 386</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="st">"Cats"</span> : 85</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="st">"Rats"</span> : 15</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="ex">%%</span><span class="kw">|</span> <span class="ex">label:</span> Illustration 1</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="ex">%%</span><span class="kw">|</span> <span class="ex">fig-cap:</span> <span class="st">"Animal adoptio through volunteers."</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="ex">%%</span><span class="kw">|</span> <span class="ex">fig-width:</span> 6.5</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
+</div>
 <div id="caution-1" class="callout caution">
 <div class="callout-square">
 <i class="callout-icon" data-feather="alert-triangle"></i>
