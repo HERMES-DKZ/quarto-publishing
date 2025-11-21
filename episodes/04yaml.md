@@ -36,7 +36,7 @@ A Key-Value pair is created by pairing a predetermined key (such as name, title,
 ::: callout
 ### Example of a simple YAML header
 
-```{YAML}
+```yaml
 title: Example
 format: html
     toc: true
@@ -60,7 +60,7 @@ These pairs can contain a wide variety of information about the paper, its autho
 Note that not all of the pairs are necessary, and many can be cut if they are not needed or available.
 
 
-```{YAML}
+```yaml
 ---
 title: How to write a YAML header
 format: pdf
