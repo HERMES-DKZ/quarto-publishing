@@ -36,11 +36,11 @@ A Key-Value pair is created by pairing a predetermined key (such as name, title,
 ::: callout
 ### Example of a simple YAML header
 
-```yaml
-title: Example
-format: html
-    toc: true
-```
+    ```{yaml}
+    title: Example
+    format: html
+        toc: true
+    ```
 :::
 
 ::: callout
@@ -60,59 +60,59 @@ These pairs can contain a wide variety of information about the paper, its autho
 Note that not all of the pairs are necessary, and many can be cut if they are not needed or available.
 
 
-```yaml
----
-title: How to write a YAML header
-format: pdf
-subtitle: An easy Guide with a good example
-date: 2025-08-01
-type: education
-authors:
-    - name: John Doe
-      id: jd
-      orcid: 0000 0000 0000 0000
-      email: john.doe@example.com
-      url: author-website.com
-      degrees: Bachelor of Arts
-      role: concept
-      affiliation:
-          - name: Example University
-            city: Towncity
-            region: Arearegion
-            Country: Countryland
-            url: univerity-website.com
-    - name: Jane Public
-      id: jp
-      orcid: 1111 2222 3333 4444
-      email: jane.p@example.com
-      url: janesawesomewebsite.net
-      degrees: M.o.S.
-      role: visuals
-      affiliation:
-          - name: XYZ Collage
-            city: Villageville
-            region: Random County
-            Country: Republic of Example
-            url: collage-page.com
-abstract: |
-    A concice and easy to read abstract.
-keywords:
-- Example
-- Quarto
-- YAML
-- Headers
-
-license: "CC BY ND"
-copyright: 
-  holder: John Doe
-  year: 2025
-funding: If your research was funded it can be written here.
----
-```
+    ```{yaml}
+    ---
+    title: How to write a YAML header
+    format: pdf
+    subtitle: An easy Guide with a good example
+    date: 2025-08-01
+    type: education
+    authors:
+        - name: John Doe
+          id: jd
+          orcid: 0000 0000 0000 0000
+          email: john.doe@example.com
+          url: author-website.com
+          degrees: Bachelor of Arts
+          role: concept
+          affiliation:
+              - name: Example University
+                city: Towncity
+                region: Arearegion
+                Country: Countryland
+                url: univerity-website.com
+        - name: Jane Public
+          id: jp
+          orcid: 1111 2222 3333 4444
+          email: jane.p@example.com
+          url: janesawesomewebsite.net
+          degrees: M.o.S.
+          role: visuals
+          affiliation:
+              - name: XYZ Collage
+                city: Villageville
+                region: Random County
+                Country: Republic of Example
+                url: collage-page.com
+    abstract: |
+        A concice and easy to read abstract.
+    keywords:
+    - Example
+    - Quarto
+    - YAML
+    - Headers
+    
+    license: "CC BY ND"
+    copyright: 
+      holder: John Doe
+      year: 2025
+    funding: If your research was funded it can be written here.
+    ---
+    ```
 
 ::: callout
 
-###' Callout: YAML Keys
+### YAML Keys
 
 * `title:`               – Title of you paper/webpage/publication
 * `subtitle:`            – Possible subtitle or clarification
