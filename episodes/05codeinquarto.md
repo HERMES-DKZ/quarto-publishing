@@ -51,35 +51,34 @@ You simply need to insert the following part into your Quarto document in order 
 ::: caution 
 For our example we will insert a slightly modified version of the code used in the Python101 lesson:
 
-```{Python}
-import plotly.express as px
-import pandas as pd
-
-data_path= 'https://raw.githubusercontent.com/HERMES-DKZ/Python_101_humanities/main/episodes/data/moma_artworks.csv'
-moma_df= pd.read_csv(data_path)
-
-df = moma_df.copy()
-df['Date'] = pd.to_numeric(df['Date'], errors='coerce')
-
-top_media = df['Medium'].value_counts().nlargest(8).index
-medium_df = df[df['Medium'].isin(top_media)]
-
-fig = px.histogram(medium_df, x='Date', color='Medium',
-                   nbins=50,
-                   title='Trends in Medium Usage Over Time: the Top 8 Media')
-
-fig.update_xaxes(title_text='Year')
-fig.update_yaxes(title_text='Number of Artworks')
-
-fig.show()
-```
+    ```{Python}
+    import plotly.express as px
+    import pandas as pd
+    
+    data_path= 'https://raw.githubusercontent.com/HERMES-DKZ/Python_101_humanities/main/episodes/data/moma_artworks.csv'
+    moma_df= pd.read_csv(data_path)
+    
+    df = moma_df.copy()
+    df['Date'] = pd.to_numeric(df['Date'], errors='coerce')
+    
+    top_media = df['Medium'].value_counts().nlargest(8).index
+    medium_df = df[df['Medium'].isin(top_media)]
+    
+    fig = px.histogram(medium_df, x='Date', color='Medium',
+                       nbins=50,
+                       title='Trends in Medium Usage Over Time: the Top 8 Media')
+    
+    fig.update_xaxes(title_text='Year')
+    fig.update_yaxes(title_text='Number of Artworks')
+    
+    fig.show()
+    ```
 :::
 
 ::: solution
 ### Using this Code chuck in VSCode could look like the following example:
 ![](https://pad.zdv.net/uploads/1aaad49a-e618-486d-b63c-b368b59a3ce8.png)
 ::: 
-
 
 
 ::: caution
@@ -105,14 +104,14 @@ In order to use Mermaid, simply put your mermaid text into the following part:
 A commonly used graph, which can be used and implemented to visualize a wide variety of data, is the barchart. It offers an easy and comprehensive form of displaying percentages and relative strength of different aspects of data. 
 A bar chart can be easyly oimplemented into a Quarto document using the implemented Mermaid language. As an example we have a pie chart, showing the relative distribution of pets adopted by volunteers. It is split into three categories: dogs, cats and rats. Each categorie is represented by an indented Key-Value pair, with the titles of each categorie fucntioning as the key. The value of each key contains the total number of the relevant pet adopted. 
 When rendered the pie chaart will not show the numbers used in the code. Instead it will show the percentage of the categorie relevant to all adopted pets.
-
-```{mermaid}
-pie title Pets adopted by volunteers
-    "Dogs" : 386
-    "Cats" : 85
-    "Rats" : 15
-
-```
+    
+    ```mermaid
+    pie title Pets adopted by volunteers
+        "Dogs" : 386
+        "Cats" : 85
+        "Rats" : 15
+    
+    ```
 :::
 
 ::: solution
@@ -148,36 +147,36 @@ The second section established the different categories and steps in the flowcha
 The third step establishes the connections between the shapes created in step 2. Here Graphviz uses an easy to understand concept: Connections between different shapes/categories are depicted in the code as arrows. The arrow can be labled with text or flipped by adding the relevant code ( "label =" for text, "dir=back" for a flipped arrow) behind the newly created directional pair.
 The forth step {rank = same} is optional and dictates that the three categories "try", "works" and "retry" will be displayed next to each other as they are now on the same rank.
 
-```{dot}
-digraph G {
-
-  code [
-    label = "Try to code in Quarto";
-    shape = rect;
-  ];
-  works [
-    label = "You win!";
-    shape = oval;
-  ];
-  try [
-    label = "Did the code work?";
-    shape = diamond;
-  ];
-  retry [
-    label = "Change things\nuntil it works.";
-    shape = rect;
-  ];
-
-  code -> try;
-  works -> try [ label = "Yes"; dir=back ];
-  retry:s -> try:s;
-  try -> retry [ label = "No" ];
-  {
-    rank=same;
-    try; works; retry; 
-  }
-}
-```
+    ```dot
+    digraph G {
+    
+      code [
+        label = "Try to code in Quarto";
+        shape = rect;
+      ];
+      works [
+        label = "You win!";
+        shape = oval;
+      ];
+      try [
+        label = "Did the code work?";
+        shape = diamond;
+      ];
+      retry [
+        label = "Change things\nuntil it works.";
+        shape = rect;
+      ];
+    
+      code -> try;
+      works -> try [ label = "Yes"; dir=back ];
+      retry:s -> try:s;
+      try -> retry [ label = "No" ];
+      {
+        rank=same;
+        try; works; retry; 
+      }
+    }
+    ```
 :::
 
 ::: solution
@@ -206,7 +205,8 @@ For our Example we, will now try to add some additional informations to our Merm
 First we will give it an actual internal name. This can be done by adding the Key-Value pair "label: 'selected name'" as a comment to your code. In order to keep it simple we just choose "Illustration 1"
 Then we add a caption for our illustration.  Here we also use a Key-Value pair, this time with the Key "fig-cap". This will create a caption for our illiustration. 
 lastly we want to limit how wide our newly created graph will be when displayed. This can be done by adding a third Key-Value pair, this time with the "fig-width" key.
-```{mermaid}
+
+```mermaid
 
 pie title Pets adopted by volunteers
     "Dogs" : 386
