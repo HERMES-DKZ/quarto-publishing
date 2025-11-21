@@ -51,7 +51,8 @@ Quarto allows you to edit every font used by different syntaxes in its YAML head
 To do so you can add the relevant font type followed by a typeset into the header.
 
 For example:
-```{YAML}
+
+```{YML}
 mainfont:  "Times New Roman"  Sets Times New Roman as font for the main text
 sansfont: "Open Sans"         Sets Open Sans as a font for headings
     - Color=39729E            Sets the Color of headings using a HexCode
