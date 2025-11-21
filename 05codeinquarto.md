@@ -105,7 +105,7 @@ A commonly used graph, which can be used and implemented to visualize a wide var
 A bar chart can be easyly oimplemented into a Quarto document using the implemented Mermaid language. As an example we have a pie chart, showing the relative distribution of pets adopted by volunteers. It is split into three categories: dogs, cats and rats. Each categorie is represented by an indented Key-Value pair, with the titles of each categorie fucntioning as the key. The value of each key contains the total number of the relevant pet adopted. 
 When rendered the pie chaart will not show the numbers used in the code. Instead it will show the percentage of the categorie relevant to all adopted pets.
     
-    ```mermaid
+    ```{mermaid}
     pie title Pets adopted by volunteers
         "Dogs" : 386
         "Cats" : 85
@@ -147,7 +147,7 @@ The second section established the different categories and steps in the flowcha
 The third step establishes the connections between the shapes created in step 2. Here Graphviz uses an easy to understand concept: Connections between different shapes/categories are depicted in the code as arrows. The arrow can be labled with text or flipped by adding the relevant code ( "label =" for text, "dir=back" for a flipped arrow) behind the newly created directional pair.
 The forth step {rank = same} is optional and dictates that the three categories "try", "works" and "retry" will be displayed next to each other as they are now on the same rank.
 
-    ```dot
+    ```{dot}
     digraph G {
     
       code [
@@ -206,16 +206,16 @@ First we will give it an actual internal name. This can be done by adding the Ke
 Then we add a caption for our illustration.  Here we also use a Key-Value pair, this time with the Key "fig-cap". This will create a caption for our illiustration. 
 lastly we want to limit how wide our newly created graph will be when displayed. This can be done by adding a third Key-Value pair, this time with the "fig-width" key.
 
-```mermaid
-
-pie title Pets adopted by volunteers
-    "Dogs" : 386
-    "Cats" : 85
-    "Rats" : 15
-%%| label: Illustration 1
-%%| fig-cap: "Animal adoptio through volunteers."
-%%| fig-width: 6.5
-```
+    ```{mermaid}
+    
+    pie title Pets adopted by volunteers
+        "Dogs" : 386
+        "Cats" : 85
+        "Rats" : 15
+    %%| label: Illustration 1
+    %%| fig-cap: "Animal adoptio through volunteers."
+    %%| fig-width: 6.5
+    ```
 
 ::: caution
 ### Caution:
