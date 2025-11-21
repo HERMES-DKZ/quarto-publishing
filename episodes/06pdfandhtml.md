@@ -52,7 +52,7 @@ To do so you can add the relevant font type followed by a typeset into the heade
 
 For example:
 
-```{YML}
+```yaml
 mainfont:  "Times New Roman"  Sets Times New Roman as font for the main text
 sansfont: "Open Sans"         Sets Open Sans as a font for headings
     - Color=39729E            Sets the Color of headings using a HexCode
@@ -62,7 +62,7 @@ The color of different parts of the PDF can be changes using a similar code.
 
 for example:
 
-```{YAML}
+```yaml
 linkcolor:    Sets the color for links
 toccolor:     Sets the color for the Table of Contents
 
@@ -73,7 +73,7 @@ toccolor:     Sets the color for the Table of Contents
 Lastly one can use a variety of command in order to change the general layout of the document, such as margins, paper size and geometry.
 
 
-```{YAML}
+```yaml
 title: "My Document"
 format: 
   pdf: 
@@ -95,7 +95,7 @@ Quarto uses a 25 themes from the Bootswitch project. A full overview can be foun
 Multiple themes can be used in order to for example implement a Dark and Light mode to your website.
 To implement such a theme you simply need to add it to your YAML header like this:
 
-```{YAML}
+```yaml
   html: 
     theme:
       light: united
