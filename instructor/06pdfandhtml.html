@@ -403,27 +403,40 @@ and print friendly dimensions</p>
 its YAML header. To do so you can add the relevant font type followed by
 a typeset into the header.</p>
 <p>For example:</p>
-<p><code>{YML} mainfont:  "Times New Roman"  Sets Times New Roman as font for the main text sansfont: "Open Sans"         Sets Open Sans as a font for headings     - Color=39729E            Sets the Color of headings using a HexCode</code></p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">mainfont</span><span class="kw">:</span><span class="at">  </span><span class="st">"Times New Roman"</span><span class="at">  </span><span class="er">Sets</span><span class="at"> </span><span class="er">Times</span><span class="at"> </span><span class="er">New</span><span class="at"> </span><span class="er">Roman</span><span class="at"> </span><span class="er">as</span><span class="at"> </span><span class="er">font</span><span class="at"> </span><span class="er">for</span><span class="at"> </span><span class="er">the</span><span class="at"> </span><span class="er">main</span><span class="at"> </span><span class="er">text</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">sansfont</span><span class="kw">:</span><span class="at"> </span><span class="st">"Open Sans"</span><span class="at">         </span><span class="er">Sets</span><span class="at"> </span><span class="er">Open</span><span class="at"> </span><span class="er">Sans</span><span class="at"> </span><span class="er">as</span><span class="at"> </span><span class="er">a</span><span class="at"> </span><span class="er">font</span><span class="at"> </span><span class="er">for</span><span class="at"> </span><span class="er">headings</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> Color=39729E            Sets the Color of headings using a HexCode</span></span></code></pre>
+</div>
 <p>The color of different parts of the PDF can be changes using a
 similar code.</p>
 <p>for example:</p>
-<p>```{YAML} linkcolor: Sets the color for links toccolor: Sets the
-color for the Table of Contents</p>
-<pre><code>
-### Layout
-
-Lastly one can use a variety of command in order to change the general layout of the document, such as margins, paper size and geometry.
-
-
-```{YAML}
-title: "My Document"
-format:
-  pdf:
-    documentclass: article
-    geometry:
-      - top=30mm
-      - left=20mm
-      - heightrounded</code></pre>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">linkcolor</span><span class="kw">:</span><span class="at">    Sets the color for links</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">toccolor</span><span class="kw">:</span><span class="at">     Sets the color for the Table of Contents</span></span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="layout">Layout<a class="anchor" aria-label="anchor" href="#layout"></a></h3>
+<p>Lastly one can use a variety of command in order to change the
+general layout of the document, such as margins, paper size and
+geometry.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="at">    </span><span class="fu">documentclass</span><span class="kw">:</span><span class="at"> article</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="at">    </span><span class="fu">geometry</span><span class="kw">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> top=30mm</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> left=20mm</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> heightrounded</span></span></code></pre>
+</div>
 </div>
 </section><section><h2 class="section-heading" id="html">HTML<a class="anchor" aria-label="anchor" href="#html"></a></h2>
 <hr class="half-width"><p>Many of the options available for PDFS are also or similarly
@@ -439,8 +452,15 @@ Bootswitch project. A full overview can be found <a href="https://bootswatch.com
 order to for example implement a Dark and Light mode to your website. To
 implement such a theme you simply need to add it to your YAML header
 like this:</p>
-<p><code>{YAML}   html:      theme:       light: united       dark: darkly</code>
-The following example uses the two styles shown above: <img src="https://pad.zdv.net/uploads/94c9e100-1544-4f23-ab14-c3a8fca8fa75.png" class="figure"><img src="https://pad.zdv.net/uploads/98065ef7-da80-4397-b997-5a6c00c84afa.png" class="figure"></p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="at">      </span><span class="fu">light</span><span class="kw">:</span><span class="at"> united</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="at">      </span><span class="fu">dark</span><span class="kw">:</span><span class="at"> darkly</span></span></code></pre>
+</div>
+<p>The following example uses the two styles shown above: <img src="https://pad.zdv.net/uploads/94c9e100-1544-4f23-ab14-c3a8fca8fa75.png" class="figure"><img src="https://pad.zdv.net/uploads/98065ef7-da80-4397-b997-5a6c00c84afa.png" class="figure"></p>
 <div id="exercise" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
