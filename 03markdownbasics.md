@@ -28,7 +28,7 @@ Rhese features contain some of the most common elements of written texts, such a
 The implementation of picrtures is also possible to implement pictures in Markdown.
 Some of the most useful parts of Markdown syntax are shown here:
 
-<html>
+<div>
   <body>
     <table style="width:80%">
       <tr>
@@ -114,9 +114,7 @@ Some of the most useful parts of Markdown syntax are shown here:
       </tr>
     </table>
   </body>
-
-
-</html>
+</div>
 
 ::: challenge
 
