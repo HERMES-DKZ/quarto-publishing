@@ -633,6 +633,9 @@ syntax.</li>
 </div>
 </div>
 </div>
+<section><h2 class="section-heading" id="markdown-syntax">Markdown Syntax<a class="anchor" aria-label="anchor" href="#markdown-syntax"></a>
+</h2>
+<hr class="half-width">
 <p>In order to use the source mode of Quarto, one needs to be able to
 write a document using the Markdown programming language. The relative
 simplicity and straightforardness of Markdown makes it one of the ideal
@@ -642,7 +645,7 @@ example, this page is based on Markdown as well! Markdown is designed as
 a simple and easy to understand programming language. As such there are
 only a few key features the user needs to know to create basic syntax in
 Markdown.</p>
-<p>Rhese features contain some of the most common elements of written
+<p>These features contain some of the most common elements of written
 texts, such as tables, links and footnotes. But also features used to
 visually improve your text with features such as bold or italicised
 writing, horizontal lines for textseperation or differently sized
@@ -652,6 +655,77 @@ are shown here:</p>
 <div class="include">
 <p>episodes/_resources/markdown_table.html</p>
 </div>
+</section><section><h2 class="section-heading" id="writing-our-paper-with-markdown">Writing our paper with Markdown<a class="anchor" aria-label="anchor" href="#writing-our-paper-with-markdown"></a>
+</h2>
+<hr class="half-width">
+<p>Now that we know some of the basic syntax of Markdown, we can start
+to write our paper!</p>
+<p>Lets start with some headers to give our paper some structure. For
+this we start by creating a basic structure using the different tiers of
+headers offered by markdown:</p>
+<pre><code><span><span class="co"># Introduction</span></span>
+<span><span class="co">## History of the MOMA</span></span>
+<span><span class="co">### Founding</span></span>
+<span><span class="co">### Recent History</span></span>
+<span><span class="co">## Overview of the Dataset</span></span>
+<span><span class="co"># The Distribution of Art</span></span>
+<span><span class="co">## Subsections of the MOMA</span></span>
+<span><span class="co">## Forms of Artworks</span></span>
+<span><span class="co">### Distinction by Material</span></span>
+<span><span class="co">### Distinction by Origin</span></span>
+<span><span class="co">## Analysis of the Dataset</span></span>
+<span><span class="co">### Summary of Data</span></span>
+<span><span class="co">### Visualisations</span></span>
+<span><span class="co"># Final Thoughts</span></span></code></pre>
+<p>This structure, created by the different quantity of # in each line,
+creates a tiered layering of headers, subheaders and so on. The more #
+we put at the start of a line, the less “important” a header is. This
+newly created structure will later be used by quarto to9 create a table
+of contents. You can put up ti six # in a line.</p>
+<p>Now that we have our section headers, we can add the most important
+part of a paper: the text. For this we can simple add whatever text we
+want to insert between our headers:</p>
+<p>This could look like this:</p>
+<pre><code># Introduction
+## History of the MOMA
+### Founding
+MoMA was founded in 1929 in New York City by a group of patrons, including Abby Aldrich Rockefeller. Its mission was to introduce the public to modern art and cultivate appreciation for contemporary creative expression. Early acquisitions focused on European avant-garde works, and the museum quickly became a hub for exhibitions, education, and innovation in the arts.
+### Recent History
+Over the decades, MoMA has expanded both physically and conceptually. Renovations, new wings, and acquisitions have diversified its collection, integrating photography, design, and media arts. Recent decades saw increased international representation and digital initiatives, reflecting global contemporary practices. Today, MoMA balances historic modernist works with experimental contemporary pieces, maintaining its role as a dynamic cultural institution.
+## Overview of the Dataset
+</code></pre>
+<p>Low lets add a few more visual elements to our texts. We could use
+for example an image and a table to do so. In order to add a an image we
+can use either images from the internet by adding a link, or add a path
+to the location of the image on the device. Images are marked by an
+exclamation point, square brackets, round brackets and winged brackets.
+The quare brackets can be left empty, but otherwise contain an alternate
+text for the image. The round brackets contain the link or datapath of
+the image, and the winged brackets can be used to change the rendred
+images size and dimensions. This could look something like this:</p>
+<pre><code>Using a link:
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/MoMa_NY_USA_1.jpg/960px-MoMa_NY_USA_1.jpg){width=x height=300}
+
+Using a local image. The image must be in the same folder as the Quarto document!
+![](MOMAyard.JPG){width=x height=300}
+</code></pre>
+<p>Now we can add a table to our document. For this we “draw” a table in
+Markdown like this:</p>
+<pre><code>## Subsections of the MOMA
+
+| Name | Responcebility |
+| -------- | ------- |
+| Architecture and Design | Collect, manage, and exhibit architectural drawings and models, design objects, and graphic design works. |
+| Drawings and Prints | Collect, manage, and exhibit modern and contemporary drawings and prints. |
+| Film | Collect, manage, and exhibit film. The department consists of the following divisions: Film Archive, Film Study Center, Circulating Film Library, Exhibitions, and Programming. |
+| Media and Performance | Collect, manage, and exhibit film. The department consists of the following divisions: Film Archive, Film Study Center, Circulating Film Library, Exhibitions, and Programming. |
+| Painting and Sculpture | Collect, manage, and exhibit modern and contemporary painting and sculpture. |
+| Photography | Collect, manage, and exhibit modern and contemporary photography |
+| Publications | Produce and publish the Museum’s exhibition catalogues and other books, including digital publications. |
+| Video (Digital Media) | Work with MoMA video producers to develop and produce content for MoMA’s YouTube Live series |</code></pre>
+<p>The different sections of the table are devided by |.</p>
+<p>When we have now added our Table and Image to ourtext it Could look
+something like this when rendered: <img src="https://pad.zdv.net/uploads/4f2931b4-759f-488e-bad4-9c7f67a1e82d.png" class="figure"></p>
 <div id="exercise" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -681,7 +755,12 @@ Matkdown. Websites like <a href="https://www.markdownguide.org/" class="external
 variety of guides, cheat sheets and help.</p>
 </div>
 </div>
-</div></section><section id="aio-04yaml"><p>Content from <a href="04yaml.html">An introduction to YAML headers</a></p>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-04yaml"><p>Content from <a href="04yaml.html">An introduction to YAML headers</a></p>
 <hr>
 <p>Last updated on 2025-11-21 |
 
