@@ -35,12 +35,13 @@ A Key-Value pair is created by pairing a predetermined key (such as name, title,
 
 ::: callout
 ### Example of a simple YAML header
-
-    ```{yaml}
+```
+    ---
     title: Example
     format: html
         toc: true
-    ```
+    ---
+```
 :::
 
 ::: callout
@@ -56,16 +57,46 @@ A Key-Value pair is created by pairing a predetermined key (such as name, title,
 
 ## YAML hearders for scientific publishing
 
-In the following example you can see an assortment of YAML pairs, which are commonly used for the implementation of metadata in scientific articles.
+There is a wide ranging assortment of YAML pairs, which are commonly used for the implementation of metadata in scientific articles.
 These pairs can contain a wide variety of information about the paper, its authors and its place of origin, as well as information on copyright, funding and other legal characteristics.
 Note that not all of the pairs are necessary, and many can be cut if they are not needed or available.
+Here is an overview about some commonly used Key-Value pairs:
+
+::: callout
+
+### YAML Keys
+
+* `title:`               – Title of you paper/webpage/publication
+* `subtitle:`            – Possible subtitle or clarification
+* `date:`                – Publishing date
+* `type:`                – Type of publication. May use EPUB Publication Types or free strings
+* `author:/authors:`     – Names and informations on the author or authors. Can be clarified through sub categories.
+* `name:`                – Name of an author or institution
+* `id:`                  – Identifier used to refer the author in other fields
+* `orcid:`               – Creates a link to the author’s "Open Researcher and Contributor ID" (ORCID).  
+* `email:`               – Email adress of person or institution.
+* `url`                  – Associated website of person or institution
+* `degree:/degrees:`     – Authors dregrees
+* `affiliation`          – Affiliatiated institution. Can be clarified through sub categories
+* `city/region/country:` – Name of corresponding geographic entity
+* `abstract`             – Abstract of the publication
+* `keywords`             – Keywords of the publication, can be more or less detailled
+* `license`              – A license can be either specified through a string or by inserting a Creative Commons abbrevation
+* `copyright`            – Copyright holder.  Can be clarified through sub categories
+* `holder`               – Name of the copyright holder
+* `year`                 – Year of the copyright
+* `funding`              – If the publication received funding it can be mentioned here
+
+:::
+
+Now we can use these different options to create a detailled YAML header for ourpaperon the MOMA and its artworks:
 
 
-    ```{yaml}
+```
     ---
-    title: How to write a YAML header
+    title: The Destribution of Art in the Museum of Modern Art (MOMA)
     format: pdf
-    subtitle: An easy Guide with a good example
+    subtitle: An analysis using a premade Dataset
     date: 2025-08-01
     type: education
     authors:
@@ -96,12 +127,12 @@ Note that not all of the pairs are necessary, and many can be cut if they are no
                 Country: Republic of Example
                 url: collage-page.com
     abstract: |
-        A concice and easy to read abstract.
+        This paper examines the Museum of Modern Art (MoMA) through its collection and dataset analysis. It explores the museum’s history, organizational structure, and the distribution of artworks by material, origin, and subsection. Using data visualizations, trends in acquisition, stylistic diversity, and global representation are highlighted. The study demonstrates how MoMA reflects the evolution of modern art and provides insight into curatorial practices and the broader cultural landscape.
     keywords:
-    - Example
-    - Quarto
-    - YAML
-    - Headers
+    - Art History
+    - Museum
+    - Distibution of Material
+    - Colonial studies
     
     license: "CC BY ND"
     copyright: 
@@ -109,44 +140,16 @@ Note that not all of the pairs are necessary, and many can be cut if they are no
       year: 2025
     funding: If your research was funded it can be written here.
     ---
-    ```
+```
 
-::: callout
-
-### YAML Keys
-
-* `title:`               – Title of you paper/webpage/publication
-* `subtitle:`            – Possible subtitle or clarification
-* `date:`                – Publishing date
-* `type:`                – Type of publication. May use EPUB Publication Types or free strings
-* `author:/authors:`     – Names and informations on the author or authors. Can be clarified through sub categories.
-* `name:`                – Name of an author or institution
-* `id:`                  – Identifier used to refer the author in other fields
-* `orcid:`               – Creates a link to the author’s "Open Researcher and Contributor ID" (ORCID).  
-* `email:`               – Email adress of person or institution.
-* `url`                  – Associated website of person or institution
-* `degree:/degrees:`     – Authors dregrees
-* `affiliation`          – Affiliatiated institution. Can be clarified through sub categories
-* `city/region/country:` – Name of corresponding geographic entity
-* `abstract`             – Abstract of the publication
-* `keywords`             – Keywords of the publication, can be more or less detailled
-* `license`              – A license can be either specified through a string or by inserting a Creative Commons abbrevation
-* `copyright`            – Copyright holder.  Can be clarified through sub categories
-* `holder`               – Name of the copyright holder
-* `year`                 – Year of the copyright
-* `funding`              – If the publication received funding it can be mentioned here
-
-:::
+After we have added all of our metadata as Key-Value pairs, lets see how the renderes HRML version is in Quarto:
+![](https://pad.zdv.net/uploads/b40b0560-c46d-46d9-8ff8-66a0e3882eb0.png)
 
 ::: challenge
 ### Exercise
 Try to create a detailed YAML header for your document and render it again to see the difference.
 :::
 
-::: solution
-### A possible Outcome:
-Your newly rendered document could look like this:
-![](https://pad.zdv.net/uploads/0f91830e-465b-4ac4-b6e8-93637d207d2c.png)
-:::
+
 
 
