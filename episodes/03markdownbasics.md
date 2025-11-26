@@ -28,7 +28,9 @@ Rhese features contain some of the most common elements of written texts, such a
 The implementation of picrtures is also possible to implement pictures in Markdown.
 Some of the most useful parts of Markdown syntax are shown here:
 
-{% include markdown_table.html %}
+::: include
+episodes/_resources/markdown_table.html
+:::
 
 ::: challenge
 
