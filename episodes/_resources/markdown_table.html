@@ -1,0 +1,98 @@
+
+<div>
+  <table style="width:80%">
+    <tr>
+      <th>Effect/Formatting Element</th>
+      <th>Markdown Syntax</th>
+      <th>Frontend Appearance</th>
+    </tr>
+
+    <tr>
+      <td>Normal text</td>
+      <td>Text</td>
+      <td>Text</td>
+    </tr>
+
+    <tr>
+      <td>Headings</td>
+      <td>\# Heading 1<br>\### Heading 3</td>
+      <td><h1>Heading 1</h1><h3>Heading 3</h3></td>
+    </tr>
+
+    <tr>
+      <td>Styles</td>
+      <td>**Bold**<br>*Italics*</td>
+      <td><b>Bold</b><br><i>Italic</i></td>
+    </tr>
+
+    <tr>
+      <td>Code</td>
+      <td>\`Code\`</td>
+      <td><code>Code</code></td>
+    </tr>
+
+    <tr>
+      <td>Codeblock (Python)</td>
+      <td>
+        \`\`\`python<br>
+        Codeblock = True<br>
+        print("Hello World")<br>
+        \`\`\`
+      </td>
+      <td>
+        <code class="language-python">
+          Codeblock = True<br>
+          print("Hello World")
+        </code>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Table</td>
+      <td>
+        | X | Y | Z |<br>
+        |---|---|---|<br>
+        | a | b | c |<br>
+        | d | e | f |
+      </td>
+      <td>
+        <table style="width:60%">
+          <tr><th>X</th><th>Y</th><th>Z</th></tr>
+          <tr><td>A</td><td>B</td><td>C</td></tr>
+          <tr><td>D</td><td>E</td><td>F</td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Footnote</td>
+      <td>
+        Lorem Ipsum[^1]<br><br>
+        [^1]: Footnote
+      </td>
+      <td>
+        <p>Lorem Ipsum<a href="#footnote-1">[1]</a>.</p>
+        <p id="footnote-1">[1] Footnote</p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Image</td>
+      <td>!\[Alternative Text\](image.jpg)</td>
+      <td><img src="https://picsum.photos/200" alt="Alternative Text"></td>
+    </tr>
+
+    <tr>
+      <td>Link</td>
+      <td>\[Example\](https://www.example.com)</td>
+      <td><a href="https://www.example.com">Example</a></td>
+    </tr>
+
+    <tr>
+      <td>Horizontal line</td>
+      <td>____ or ----</td>
+      <td><hr></td>
+    </tr>
+
+  </table>
+</div>
