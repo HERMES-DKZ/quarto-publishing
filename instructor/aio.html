@@ -762,7 +762,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04yaml"><p>Content from <a href="04yaml.html">An introduction to YAML headers</a></p>
 <hr>
-<p>Last updated on 2025-11-21 |
+<p>Last updated on 2025-11-26 |
 
         <a href="https://hermes-dkz.github.io/quarto-publishing/edit/main/episodes/04yaml.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 1 minutes</p>
@@ -828,15 +828,11 @@ created by in indenting the line with Tab.</p>
 <div id="example-of-a-simple-yaml-header" class="callout-inner">
 <h3 class="callout-title">Example of a simple YAML header</h3>
 <div class="callout-content">
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{yaml}</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">title:</span> Example</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">format:</span> html</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>    <span class="ex">toc:</span> true</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
-</div>
+<pre><code>    ---
+    title: Example
+    format: html
+        toc: true
+    ---</code></pre>
 </div>
 </div>
 </div>
@@ -867,66 +863,13 @@ are used to create it.</li>
 <section><h2 class="section-heading" id="yaml-hearders-for-scientific-publishing">YAML hearders for scientific publishing<a class="anchor" aria-label="anchor" href="#yaml-hearders-for-scientific-publishing"></a>
 </h2>
 <hr class="half-width">
-<p>In the following example you can see an assortment of YAML pairs,
-which are commonly used for the implementation of metadata in scientific
-articles. These pairs can contain a wide variety of information about
-the paper, its authors and its place of origin, as well as information
-on copyright, funding and other legal characteristics. Note that not all
-of the pairs are necessary, and many can be cut if they are not needed
-or available.</p>
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{yaml}</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">---</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">title:</span> How to write a YAML header</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="ex">format:</span> pdf</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="ex">subtitle:</span> An easy Guide with a good example</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="ex">date:</span> 2025-08-01</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="ex">type:</span> education</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="ex">authors:</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    <span class="ex">-</span> name: John Doe</span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>      <span class="ex">id:</span> jd</span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>      <span class="ex">orcid:</span> 0000 0000 0000 0000</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>      <span class="ex">email:</span> john.doe@example.com</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>      <span class="ex">url:</span> author-website.com</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>      <span class="ex">degrees:</span> Bachelor of Arts</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>      <span class="ex">role:</span> concept</span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>      <span class="ex">affiliation:</span></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>          <span class="ex">-</span> name: Example University</span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>            <span class="ex">city:</span> Towncity</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>            <span class="ex">region:</span> Arearegion</span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>            <span class="ex">Country:</span> Countryland</span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>            <span class="ex">url:</span> univerity-website.com</span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>    <span class="ex">-</span> name: Jane Public</span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>      <span class="ex">id:</span> jp</span>
-<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a>      <span class="ex">orcid:</span> 1111 2222 3333 4444</span>
-<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>      <span class="ex">email:</span> jane.p@example.com</span>
-<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>      <span class="ex">url:</span> janesawesomewebsite.net</span>
-<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>      <span class="ex">degrees:</span> M.o.S.</span>
-<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>      <span class="ex">role:</span> visuals</span>
-<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>      <span class="ex">affiliation:</span></span>
-<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>          <span class="ex">-</span> name: XYZ Collage</span>
-<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>            <span class="ex">city:</span> Villageville</span>
-<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>            <span class="ex">region:</span> Random County</span>
-<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>            <span class="ex">Country:</span> Republic of Example</span>
-<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>            <span class="ex">url:</span> collage-page.com</span>
-<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a><span class="ex">abstract:</span> <span class="kw">|</span></span>
-<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>    <span class="ex">A</span> concice and easy to read abstract.</span>
-<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a><span class="ex">keywords:</span></span>
-<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a><span class="ex">-</span> Example</span>
-<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a><span class="ex">-</span> Quarto</span>
-<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a><span class="ex">-</span> YAML</span>
-<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="ex">-</span> Headers</span>
-<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="ex">license:</span> <span class="st">"CC BY ND"</span></span>
-<span id="cb2-44"><a href="#cb2-44" tabindex="-1"></a><span class="ex">copyright:</span> </span>
-<span id="cb2-45"><a href="#cb2-45" tabindex="-1"></a>  <span class="ex">holder:</span> John Doe</span>
-<span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a>  <span class="ex">year:</span> 2025</span>
-<span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a><span class="ex">funding:</span> If your research was funded it can be written here.</span>
-<span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a><span class="ex">---</span></span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
-</div>
+<p>There is a wide ranging assortment of YAML pairs, which are commonly
+used for the implementation of metadata in scientific articles. These
+pairs can contain a wide variety of information about the paper, its
+authors and its place of origin, as well as information on copyright,
+funding and other legal characteristics. Note that not all of the pairs
+are necessary, and many can be cut if they are not needed or available.
+Here is an overview about some commonly used Key-Value pairs:</p>
 <div id="yaml-keys-1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -991,6 +934,57 @@ mentioned here</li>
 </div>
 </div>
 </div>
+<p>Now we can use these different options to create a detailled YAML
+header for ourpaperon the MOMA and its artworks:</p>
+<pre><code>    ---
+    title: The Destribution of Art in the Museum of Modern Art (MOMA)
+    format: pdf
+    subtitle: An analysis using a premade Dataset
+    date: 2025-08-01
+    type: education
+    authors:
+        - name: John Doe
+          id: jd
+          orcid: 0000 0000 0000 0000
+          email: john.doe@example.com
+          url: author-website.com
+          degrees: Bachelor of Arts
+          role: concept
+          affiliation:
+              - name: Example University
+                city: Towncity
+                region: Arearegion
+                Country: Countryland
+                url: univerity-website.com
+        - name: Jane Public
+          id: jp
+          orcid: 1111 2222 3333 4444
+          email: jane.p@example.com
+          url: janesawesomewebsite.net
+          degrees: M.o.S.
+          role: visuals
+          affiliation:
+              - name: XYZ Collage
+                city: Villageville
+                region: Random County
+                Country: Republic of Example
+                url: collage-page.com
+    abstract: |
+        This paper examines the Museum of Modern Art (MoMA) through its collection and dataset analysis. It explores the museum’s history, organizational structure, and the distribution of artworks by material, origin, and subsection. Using data visualizations, trends in acquisition, stylistic diversity, and global representation are highlighted. The study demonstrates how MoMA reflects the evolution of modern art and provides insight into curatorial practices and the broader cultural landscape.
+    keywords:
+    - Art History
+    - Museum
+    - Distibution of Material
+    - Colonial studies
+
+    license: "CC BY ND"
+    copyright:
+      holder: John Doe
+      year: 2025
+    funding: If your research was funded it can be written here.
+    ---</code></pre>
+<p>After we have added all of our metadata as Key-Value pairs, lets see
+how the renderes HRML version is in Quarto: <img src="https://pad.zdv.net/uploads/b40b0560-c46d-46d9-8ff8-66a0e3882eb0.png" class="figure"></p>
 <div id="exercise" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -1001,20 +995,6 @@ mentioned here</li>
 <div class="callout-content">
 <p>Try to create a detailed YAML header for your document and render it
 again to see the difference.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  A possible Outcome:
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<p>Your newly rendered document could look like this: <img src="https://pad.zdv.net/uploads/0f91830e-465b-4ac4-b6e8-93637d207d2c.png" class="figure"></p>
-</div>
 </div>
 </div>
 </div>
