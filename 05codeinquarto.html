@@ -338,7 +338,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Creating and implementing code for visualisations</h1>
-        <p>Last updated on 2025-11-21 |
+        <p>Last updated on 2025-11-27 |
 
         <a href="https://hermes-dkz.github.io/quarto-publishing/edit/main/episodes/05codeinquarto.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -411,7 +411,7 @@ Quarto. Doing so will poste no difference to doing this in a pure Python
 environment. The steps needed to be performed to create and implement a
 wide variety of illustrations and graphs in Python are explained in the
 Carpenty Lesson <a href="https://hermes-dkz.github.io/python_101_humanities/" class="external-link">Python101</a>.
-Step 4 of the episode “Analyzing Tabular Data” concefrns itself with the
+Step 4 of the episode “Analyzing Tabular Data” concerns itself with the
 visualisation of tabular data.</p>
 <div id="caution1" class="callout caution">
 <div class="callout-square">
@@ -429,62 +429,50 @@ about this.</p>
 </div>
 <p>You simply need to insert the following part into your Quarto
 document in order to insert your code:</p>
-<p>
-<code>{python}&lt;/p&gt; &lt;p&gt;</code>
-</p>
-<p>
-<br></p>
-<div id="caution2" class="callout caution">
-<div class="callout-square">
-<i class="callout-icon" data-feather="alert-triangle"></i>
-</div>
-<span class="callout-header">Caution</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>For our example we will insert a slightly modified version of the
-code used in the Python101 lesson:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{Python}</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">import</span> plotly.express as px</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="ex">import</span> pandas as pd</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="va">data_path</span><span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/HERMES-DKZ/Python_101_humanities/main/episodes/data/moma_artworks.csv'</span></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="va">moma_df</span><span class="op">=</span> <span class="ex">pd.read_csv</span><span class="er">(</span><span class="ex">data_path</span><span class="kw">)</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">df</span> = moma_df.copy<span class="er">(</span><span class="kw">)</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="va">df</span><span class="op">[</span><span class="st">'Date'</span><span class="op">]</span> <span class="ex">=</span> pd.to_numeric<span class="er">(</span><span class="va">df</span><span class="op">[</span><span class="st">'Date'</span><span class="op">]</span><span class="ex">,</span> errors=<span class="st">'coerce'</span><span class="kw">)</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="ex">top_media</span> = df<span class="pp">[</span><span class="st">'Medium'</span><span class="pp">]</span>.value_counts<span class="er">(</span><span class="kw">)</span><span class="ex">.nlargest</span><span class="er">(</span><span class="ex">8</span><span class="kw">)</span><span class="ex">.index</span></span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="ex">medium_df</span> = df[df<span class="pp">[</span><span class="st">'Medium'</span><span class="pp">]</span>.isin<span class="er">(</span><span class="ex">top_media</span><span class="kw">)</span><span class="ex">]</span></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="ex">fig</span> = px.histogram<span class="er">(</span><span class="ex">medium_df,</span> x=<span class="st">'Date'</span>, color=<span class="st">'Medium'</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>                   <span class="va">nbins</span><span class="op">=</span>50,</span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>                   <span class="va">title</span><span class="op">=</span><span class="st">'Trends in Medium Usage Over Time: the Top 8 Media'</span><span class="kw">)</span></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="ex">fig.update_xaxes</span><span class="er">(</span><span class="va">title_text</span><span class="op">=</span><span class="st">'Year'</span><span class="kw">)</span></span>
-<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="ex">fig.update_yaxes</span><span class="er">(</span><span class="va">title_text</span><span class="op">=</span><span class="st">'Number of Artworks'</span><span class="kw">)</span></span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="fu">fig.show()</span></span>
-<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{python}</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
 </div>
+<p>If we want to insert a Python based carchart into our paper we can
+actually use some of the code used in the Python101 couse for our paper.
+In the couse, a comprehensive database of artworks exibited in the MOMA
+is used and visualised in various form. We can use one of the code
+chunks used, and modify it for our puposes. The result could look
+something like this:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{Python}</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">import</span> plotly.express as px</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="ex">import</span> pandas as pd</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="va">data_path</span><span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/HERMES-DKZ/Python_101_humanities/main/episodes/data/moma_artworks.csv'</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="va">moma_df</span><span class="op">=</span> <span class="ex">pd.read_csv</span><span class="er">(</span><span class="ex">data_path</span><span class="kw">)</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">df</span> = moma_df.copy<span class="er">(</span><span class="kw">)</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="va">df</span><span class="op">[</span><span class="st">'Date'</span><span class="op">]</span> <span class="ex">=</span> pd.to_numeric<span class="er">(</span><span class="va">df</span><span class="op">[</span><span class="st">'Date'</span><span class="op">]</span><span class="ex">,</span> errors=<span class="st">'coerce'</span><span class="kw">)</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="ex">top_media</span> = df<span class="pp">[</span><span class="st">'Medium'</span><span class="pp">]</span>.value_counts<span class="er">(</span><span class="kw">)</span><span class="ex">.nlargest</span><span class="er">(</span><span class="ex">8</span><span class="kw">)</span><span class="ex">.index</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="ex">medium_df</span> = df[df<span class="pp">[</span><span class="st">'Medium'</span><span class="pp">]</span>.isin<span class="er">(</span><span class="ex">top_media</span><span class="kw">)</span><span class="ex">]</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="ex">fig</span> = px.histogram<span class="er">(</span><span class="ex">medium_df,</span> x=<span class="st">'Date'</span>, color=<span class="st">'Medium'</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>                   <span class="va">nbins</span><span class="op">=</span>50,</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>                   <span class="va">title</span><span class="op">=</span><span class="st">'Trends in Medium Usage Over Time: the Top 8 Media'</span><span class="kw">)</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="ex">fig.update_xaxes</span><span class="er">(</span><span class="va">title_text</span><span class="op">=</span><span class="st">'Year'</span><span class="kw">)</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="ex">fig.update_yaxes</span><span class="er">(</span><span class="va">title_text</span><span class="op">=</span><span class="st">'Number of Artworks'</span><span class="kw">)</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="fu">fig.show()</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
 </div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Using this Code chuck in VSCode could look like the following example:
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<figure><img src="https://pad.zdv.net/uploads/1aaad49a-e618-486d-b63c-b368b59a3ce8.png" class="figure mx-auto d-block"></figure></div>
-</div>
-</div>
-</div>
+<p>Using the Plotly library, the python code is now loaded into our
+quarto document and will be shown in our rendred document as a
+barchart.</p>
+<p>Using this Code chuck in VSCode could look like the following
+example: <img src="https://pad.zdv.net/uploads/1aaad49a-e618-486d-b63c-b368b59a3ce8.png" class="figure"></p>
 <div id="caution" class="callout caution">
 <div class="callout-square">
 <i class="callout-icon" data-feather="alert-triangle"></i>
@@ -494,7 +482,7 @@ code used in the Python101 lesson:</p>
 <h3 class="callout-title">Caution!</h3>
 <div class="callout-content">
 <p>Not all forms of visualisation work in every format. In this example
-plotly only works in html formats, not in pdf or similar formats.</p>
+Plotly only works in html formats, not in pdf or similar formats.</p>
 </div>
 </div>
 </div>
@@ -507,60 +495,48 @@ programming language. To make the work with Mermaid easy, you can use
 one of several web-based Mermaid editors. These allow you to create your
 graphs visually and copy the underlying code. You can then paste this
 code into your Quarto document. One of these Website is <a href="https://mermaid.live/" class="external-link">Mermaid.live</a>.</p>
-In order to use Mermaid, simply put your mermaid text into the following
-part:
-<p>
-<code>{mermaid}&lt;/p&gt; &lt;p&gt;</code>
-</p>
-<p>
-<br></p>
-<div id="creating-a-bar-chart-in-mermaid" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="creating-a-bar-chart-in-mermaid" class="callout-inner">
-<h3 class="callout-title">Creating a bar chart in Mermaid:</h3>
-<div class="callout-content">
-<p>A commonly used graph, which can be used and implemented to visualize
-a wide variety of data, is the barchart. It offers an easy and
-comprehensive form of displaying percentages and relative strength of
-different aspects of data. A bar chart can be easyly oimplemented into a
-Quarto document using the implemented Mermaid language. As an example we
-have a pie chart, showing the relative distribution of pets adopted by
-volunteers. It is split into three categories: dogs, cats and rats. Each
-categorie is represented by an indented Key-Value pair, with the titles
-of each categorie fucntioning as the key. The value of each key contains
-the total number of the relevant pet adopted. When rendered the pie
-chaart will not show the numbers used in the code. Instead it will show
-the percentage of the categorie relevant to all adopted pets.</p>
-<div class="codewrapper sourceCode" id="cb2">
+<p>In order to use Mermaid, simply put your mermaid text into the
+following part:</p>
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{mermaid}</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="ex">pie</span> title Pets adopted by volunteers</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="st">"Dogs"</span> : 386</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>    <span class="st">"Cats"</span> : 85</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    <span class="st">"Rats"</span> : 15</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{mermaid}</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
 </div>
+<div class="section level3">
+<h3 id="using-mermaid-to-create-a-piechart">Using Mermaid to create a piechart :<a class="anchor" aria-label="anchor" href="#using-mermaid-to-create-a-piechart"></a></h3>
+<p>A commonly used graph, which can be used and implemented to visualize
+a wide variety of data, is the piechart. It offers an easy and
+comprehensive form of displaying percentages and relative strength of
+different aspects of data. A bar chart can be easyly implemented into a
+Quarto document using the implemented Mermaid language. For our
+scientific paper, we can create a pie chart, showing the relative
+distribution of the eight most used Media in the MOMA, that were created
+between 1930 and 1934. It is split into eight categories, representing
+each medium . Each categorie is represented by an indented Key-Value
+pair, with the titles of each categorie funntioning as the key. The
+value of each key contains the total number of the relevant media added.
+When rendered the pie chart will not show the numbers used in the code.
+Instead it will show the percentage of the categorie relevant to the
+total amount of media, made up pf all eight categories combined.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{mermaid}</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">pie</span> title Medium Distribution, Top 8 1930-34</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    <span class="st">"Lithigraphy"</span> : 320</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="st">"Etching"</span> : 49</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="st">"Pencil on tracing paper"</span> : 589</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="st">"Letterpress"</span> : 225</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="st">"Pencil on paper"</span> : 97</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    <span class="st">"Gelatin silver print"</span> : 777</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>    <span class="st">"Alburnen silver print"</span> : 0</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>    <span class="st">"Chromogenic print"</span> : 0</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
 </div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Here is an example of this Mermaid bar chart in your document:
-  </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<figure><img src="https://pad.zdv.net/uploads/72f7a66e-f829-4b69-aad7-e3ec50d922af.png" class="figure mx-auto d-block"></figure></div>
-</div>
-</div>
-</div>
+<p>The resulting pie chart would look like this in your rendered paper:
+<img src="https://pad.zdv.net/uploads/38f52583-9659-4eb4-a409-57f8d2fcf3f3.png" class="figure"></p>
 <div id="exercise-1-mermaid" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -575,6 +551,7 @@ resulting graph will change.</p>
 </div>
 </div>
 </div>
+</div>
 </section><section><h2 class="section-heading" id="using-graphviz">Using Graphviz<a class="anchor" aria-label="anchor" href="#using-graphviz"></a></h2>
 <hr class="half-width"><p>Similar to Mermaid, Graphviz is an integrated coding language, which
 uses simple text-based descriptions of charts in order to create
@@ -584,11 +561,13 @@ visualisations and workflows. Like with Mermaid, the simplest way to use
 Graphviz with Quarto is to use a <a href="https://edotor.net/" class="external-link">web based
 Graphwiz editor</a> and copy the resulting code into your Quarto
 document, this time using:</p>
-<p>
-<code>{dot}&lt;/p&gt; &lt;p&gt;</code>
-</p>
-<p>
-<br></p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{dot}</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
+</div>
 <div id="creating-a-flow-chart-in-graphviz" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -616,51 +595,51 @@ arrow) behind the newly created directional pair. The forth step {rank =
 same} is optional and dictates that the three categories “try”, “works”
 and “retry” will be displayed next to each other as they are now on the
 same rank.</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{dot}</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">digraph</span> G {</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  <span class="ex">code</span> [</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="ex">label</span> = <span class="st">"Try to code in Quarto"</span><span class="kw">;</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="ex">shape</span> = rect<span class="kw">;</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="ex">]</span><span class="kw">;</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>  <span class="ex">works</span> [</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="ex">label</span> = <span class="st">"You win!"</span><span class="kw">;</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="ex">shape</span> = oval<span class="kw">;</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>  <span class="ex">]</span><span class="kw">;</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  <span class="ex">try</span> [</span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>    <span class="ex">label</span> = <span class="st">"Did the code work?"</span><span class="kw">;</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>    <span class="ex">shape</span> = diamond<span class="kw">;</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>  <span class="ex">]</span><span class="kw">;</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>  <span class="ex">retry</span> [</span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>    <span class="ex">label</span> = <span class="st">"Change things\nuntil it works."</span><span class="kw">;</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>    <span class="ex">shape</span> = rect<span class="kw">;</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>  <span class="ex">]</span><span class="kw">;</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>  <span class="ex">code</span> <span class="at">-</span><span class="op">&gt;</span> try<span class="kw">;</span></span>
-<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>  <span class="ex">works</span> <span class="at">-</span><span class="op">&gt;</span> try [ label = <span class="st">"Yes"</span><span class="kw">;</span> <span class="va">dir</span><span class="op">=</span>back <span class="ex">]</span><span class="kw">;</span></span>
-<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>  <span class="ex">retry:s</span> <span class="at">-</span><span class="op">&gt;</span> try:s<span class="kw">;</span></span>
-<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>  <span class="ex">try</span> <span class="at">-</span><span class="op">&gt;</span> retry [ label = <span class="st">"No"</span> ]<span class="kw">;</span></span>
-<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a>  <span class="kw">{</span></span>
-<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a>    <span class="va">rank</span><span class="op">=</span>same<span class="kw">;</span></span>
-<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a>    <span class="ex">try</span><span class="kw">;</span> <span class="ex">works</span><span class="kw">;</span> <span class="ex">retry</span><span class="kw">;</span> </span>
-<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a>  <span class="kw">}</span></span>
-<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="er">}</span></span>
-<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{dot}</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="ex">digraph</span> G {</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="ex">code</span> [</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>    <span class="ex">label</span> = <span class="st">"Try to code in Quarto"</span><span class="kw">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="ex">shape</span> = rect<span class="kw">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  <span class="ex">]</span><span class="kw">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  <span class="ex">works</span> [</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>    <span class="ex">label</span> = <span class="st">"You win!"</span><span class="kw">;</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>    <span class="ex">shape</span> = oval<span class="kw">;</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>  <span class="ex">]</span><span class="kw">;</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>  <span class="ex">try</span> [</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>    <span class="ex">label</span> = <span class="st">"Did the code work?"</span><span class="kw">;</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>    <span class="ex">shape</span> = diamond<span class="kw">;</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>  <span class="ex">]</span><span class="kw">;</span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>  <span class="ex">retry</span> [</span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>    <span class="ex">label</span> = <span class="st">"Change things\nuntil it works."</span><span class="kw">;</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>    <span class="ex">shape</span> = rect<span class="kw">;</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>  <span class="ex">]</span><span class="kw">;</span></span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a>  <span class="ex">code</span> <span class="at">-</span><span class="op">&gt;</span> try<span class="kw">;</span></span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a>  <span class="ex">works</span> <span class="at">-</span><span class="op">&gt;</span> try [ label = <span class="st">"Yes"</span><span class="kw">;</span> <span class="va">dir</span><span class="op">=</span>back <span class="ex">]</span><span class="kw">;</span></span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a>  <span class="ex">retry:s</span> <span class="at">-</span><span class="op">&gt;</span> try:s<span class="kw">;</span></span>
+<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a>  <span class="ex">try</span> <span class="at">-</span><span class="op">&gt;</span> retry [ label = <span class="st">"No"</span> ]<span class="kw">;</span></span>
+<span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a>  <span class="kw">{</span></span>
+<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a>    <span class="va">rank</span><span class="op">=</span>same<span class="kw">;</span></span>
+<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a>    <span class="ex">try</span><span class="kw">;</span> <span class="ex">works</span><span class="kw">;</span> <span class="ex">retry</span><span class="kw">;</span> </span>
+<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a>  <span class="kw">}</span></span>
+<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a><span class="er">}</span></span>
+<span id="cb6-30"><a href="#cb6-30" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
   Here is an example of this Graphviz in your document:
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img src="https://pad.zdv.net/uploads/ba70f6c0-391d-4ab5-b503-512cc2894344.png" class="figure mx-auto d-block"></figure></div>
 </div>
@@ -685,7 +664,7 @@ how the resulting flow chart will change.</p>
 relevant information in form of titles, descriptions etc to the chart.
 This can be done by inserting the relevant information into the relevant
 code chunk in form of comments.</p>
-<div id="callout4" class="callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -707,19 +686,24 @@ also use a Key-Value pair, this time with the Key “fig-cap”. This will
 create a caption for our illiustration. lastly we want to limit how wide
 our newly created graph will be when displayed. This can be done by
 adding a third Key-Value pair, this time with the “fig-width” key.</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{mermaid}</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="ex">pie</span> title Pets adopted by volunteers</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="st">"Dogs"</span> : 386</span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="st">"Cats"</span> : 85</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="st">"Rats"</span> : 15</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="ex">%%</span><span class="kw">|</span> <span class="ex">label:</span> Illustration 1</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="ex">%%</span><span class="kw">|</span> <span class="ex">fig-cap:</span> <span class="st">"Animal adoptio through volunteers."</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="ex">%%</span><span class="kw">|</span> <span class="ex">fig-width:</span> 6.5</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">```</span><span class="ex">{mermaid}</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="ex">pie</span> title Medium Distribution, Top 8 1930-34</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="st">"Lithigraphy"</span> : 320</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    <span class="st">"Etching"</span> : 49</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    <span class="st">"Pencil on tracing paper"</span> : 589</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    <span class="st">"Letterpress"</span> : 225</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>    <span class="st">"Pencil on paper"</span> : 97</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>    <span class="st">"Gelatin silver print"</span> : 777</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>    <span class="st">"Alburnen silver print"</span> : 0</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>    <span class="st">"Chromogenic print"</span> : 0</span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="ex">%%</span><span class="kw">|</span> <span class="ex">label:</span> Illustration 1</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="ex">%%</span><span class="kw">|</span> <span class="ex">fig-cap:</span> <span class="st">"Medium Distribution, Top 8 1930-34"</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="ex">%%</span><span class="kw">|</span> <span class="ex">fig-width:</span> 6.5</span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="kw">```</span></span></code></pre>
 </div>
 <div id="caution-1" class="callout caution">
 <div class="callout-square">
@@ -797,8 +781,8 @@ any links that you are not going to use.
   "url": "https://quarto-publishing.github.io/NA/05codeinquarto.html",
   "identifier": "https://quarto-publishing.github.io/NA/05codeinquarto.html",
   "dateCreated": "2024-04-05",
-  "dateModified": "2025-11-21",
-  "datePublished": "2025-11-26"
+  "dateModified": "2025-11-27",
+  "datePublished": "2025-11-27"
 }
 
   </script><script>
