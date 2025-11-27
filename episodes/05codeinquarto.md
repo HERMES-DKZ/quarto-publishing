@@ -36,7 +36,7 @@ This can be done in a variety of ways, such as using already integrated programm
 
 ## Using Python:
 Various python extensions can be used to plot and illustrate data in Quarto. Doing so will poste no difference to doing this in a pure Python environment.
-The steps needed to be performed to create and implement a wide variety of illustrations and graphs in Python are explained in the Carpenty Lesson [Python101](https://hermes-dkz.github.io/python_101_humanities/). Step 4 of the episode "Analyzing Tabular Data" concefrns itself with the visualisation of tabular data. 
+The steps needed to be performed to create and implement a wide variety of illustrations and graphs in Python are explained in the Carpenty Lesson [Python101](https://hermes-dkz.github.io/python_101_humanities/). Step 4 of the episode "Analyzing Tabular Data" concerns itself with the visualisation of tabular data. 
 
 ::: caution
 The intricacies of creating useful charts and visualisations using various Python libraries would be too much to discuss in this lesson. We would encourage you to visit our lesson Python101 in order to learn more about this.
@@ -44,12 +44,13 @@ The intricacies of creating useful charts and visualisations using various Pytho
 
 You simply need to insert the following part into your Quarto document in order to insert your code:
 
-<p>```{python}</p>
-<p>```</p>
-<p><br></p>
+    ```{python}
+    
+    ```
 
-::: caution 
-For our example we will insert a slightly modified version of the code used in the Python101 lesson:
+If we want to insert a Python based carchart into our paper we can actually use some of the code used in the Python101 couse for our paper. In the couse, a comprehensive database of artworks exibited in the MOMA is used and visualised in various form. 
+We can use one of the code chunks used, and modify it for our puposes.
+The result could look something like this:
 
     ```{Python}
     import plotly.express as px
@@ -73,17 +74,16 @@ For our example we will insert a slightly modified version of the code used in t
     
     fig.show()
     ```
-:::
 
-::: solution
-### Using this Code chuck in VSCode could look like the following example:
+Using the Plotly library, the python code is now loaded into our quarto document and will be shown in our rendred document as a barchart.
+
+Using this Code chuck in VSCode could look like the following example:
 ![](https://pad.zdv.net/uploads/1aaad49a-e618-486d-b63c-b368b59a3ce8.png)
-::: 
 
 
 ::: caution
 ### Caution!
-Not all forms of visualisation work in every format. In this example plotly only works in html formats, not in pdf or similar formats.
+Not all forms of visualisation work in every format. In this example Plotly only works in html formats, not in pdf or similar formats.
 :::
 
 ## Using Mermaid:
@@ -95,29 +95,33 @@ To make the work with Mermaid easy, you can use one of several web-based Mermaid
 One of these Website is [Mermaid.live](https://mermaid.live/).
 
 In order to use Mermaid, simply put your mermaid text into the following part:
-<p>```{mermaid}</p>
-<p>```</p>
-<p><br></p>
-
-::: callout
-### Creating a bar chart in Mermaid:
-A commonly used graph, which can be used and implemented to visualize a wide variety of data, is the barchart. It offers an easy and comprehensive form of displaying percentages and relative strength of different aspects of data. 
-A bar chart can be easyly oimplemented into a Quarto document using the implemented Mermaid language. As an example we have a pie chart, showing the relative distribution of pets adopted by volunteers. It is split into three categories: dogs, cats and rats. Each categorie is represented by an indented Key-Value pair, with the titles of each categorie fucntioning as the key. The value of each key contains the total number of the relevant pet adopted. 
-When rendered the pie chaart will not show the numbers used in the code. Instead it will show the percentage of the categorie relevant to all adopted pets.
     
     ```{mermaid}
-    pie title Pets adopted by volunteers
-        "Dogs" : 386
-        "Cats" : 85
-        "Rats" : 15
     
     ```
-:::
 
-::: solution
-### Here is an example of this Mermaid bar chart in your document: 
-![](https://pad.zdv.net/uploads/72f7a66e-f829-4b69-aad7-e3ec50d922af.png)
-:::
+
+### Using Mermaid to create a piechart :
+A commonly used graph, which can be used and implemented to visualize a wide variety of data, is the piechart. It offers an easy and comprehensive form of displaying percentages and relative strength of different aspects of data. 
+A bar chart can be easyly implemented into a Quarto document using the implemented Mermaid language. 
+For our scientific paper, we can create a pie chart, showing the relative distribution of the eight most used Media in the MOMA, that were created between 1930 and 1934. It is split into eight categories, representing each medium . Each categorie is represented by an indented Key-Value pair, with the titles of each categorie funntioning as the key. The value of each key contains the total number of the relevant media added. 
+When rendered the pie chart will not show the numbers used in the code. Instead it will show the percentage of the categorie relevant to the total amount of media, made up pf all eight categories combined.
+    
+    ```{mermaid}
+    pie title Medium Distribution, Top 8 1930-34
+        "Lithigraphy" : 320
+        "Etching" : 49
+        "Pencil on tracing paper" : 589
+        "Letterpress" : 225
+        "Pencil on paper" : 97
+        "Gelatin silver print" : 777
+        "Alburnen silver print" : 0
+        "Chromogenic print" : 0
+    ```
+    
+The resulting pie chart would look like this in your rendered paper: 
+![](https://pad.zdv.net/uploads/38f52583-9659-4eb4-a409-57f8d2fcf3f3.png)
+
 
 
 ::: challenge
@@ -132,9 +136,10 @@ Similar to Mermaid, Graphviz is an integrated coding language, which uses simple
 Where Mermaid is mostly used for common or simple charts and graphs, Graphviz can be used to create more complex forms of visualisations and workflows.
 Like with Mermaid, the simplest way to use Graphviz with Quarto is to use a [web based Graphwiz editor](https://edotor.net/) and copy the resulting code into your Quarto document, this time using:
 
-<p>```{dot}</p>
-<p>```</p>
-<p><br></p>
+    ```{dot}
+    
+    ```
+    
 
 
 ::: callout
@@ -208,12 +213,17 @@ lastly we want to limit how wide our newly created graph will be when displayed.
 
     ```{mermaid}
     
-    pie title Pets adopted by volunteers
-        "Dogs" : 386
-        "Cats" : 85
-        "Rats" : 15
+    pie title Medium Distribution, Top 8 1930-34
+        "Lithigraphy" : 320
+        "Etching" : 49
+        "Pencil on tracing paper" : 589
+        "Letterpress" : 225
+        "Pencil on paper" : 97
+        "Gelatin silver print" : 777
+        "Alburnen silver print" : 0
+        "Chromogenic print" : 0
     %%| label: Illustration 1
-    %%| fig-cap: "Animal adoptio through volunteers."
+    %%| fig-cap: "Medium Distribution, Top 8 1930-34"
     %%| fig-width: 6.5
     ```
 
