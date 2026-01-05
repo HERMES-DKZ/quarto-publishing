@@ -18,6 +18,8 @@ exercises: 1
 :::
 
 Every different Format of Quarto has its own unique commands and output specific code. These are most often part of the YAML header.
+As there is a large array of possible Ley-Values, makng it possible to customize many different and minute aspects of Quarto, we will only show you some of the more simple and easy to understand Key-value pairs.
+But as the theory behind all YAML pairs and their resulting changes and modifications are the same, you can freely experiment with all offered possibilities to find the options that fit your preferred visual and editorial srtyle.
 
 ## PDF
 
@@ -110,5 +112,3 @@ The following example uses the two styles shown above:
 Decide if you would like to continue with a PDF or HTML. Then try out the new YAML headers and options in your document. Be creative!
 
 :::
-
-
