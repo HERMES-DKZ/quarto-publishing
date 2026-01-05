@@ -15,13 +15,14 @@ exercises: 1
 ::: objectives
 
 + Open a new Quarto document.
++ Create a working folder
 + Switch between editing modes
 
 :::
 
 ## Choosing your working folder
 
-in order to work in a clean and organized environment, we will first create a new working folder and choose to use it in Visual Studio Code. 
+In order to work in a clean and organized environment, we will first create a new working folder and choose to use it in Visual Studio Code. 
 In order to do so, we will first open the options in the upper left corner of the window (depicted as three parallel horizontal lines). There we will follow the path of File -> Open Folder.
 ![](https://pad.zdv.net/uploads/89f053f1-4950-470f-be98-72027f930988.png)
 Here we can then create a new folder, which we call ***"Art_distribution_paper"***.
@@ -78,5 +79,3 @@ This will have two effects:
 Create a new folder called "Quarto_lesson" and open it in VSCode. Open a new Quarto document in VSCode and save it in your newly created folder.
 
 :::
-
-
