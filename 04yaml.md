@@ -8,12 +8,12 @@ exercises: 1
 
 - What is YAML?
 - How to use a YAML header?
-- What are the mnost useful Key-Value pairs for a scientofic paper?
+- What are the most useful Key-Value pairs for a scientific paper?
   
 :::
 
 ::: objectives
-
+- know how to create a simple YAML header
 - Know what Key-Value pairs to use in a scientific paper.
 - Know how to implement a detailled YAML header for a scientific paper.
 
@@ -50,7 +50,7 @@ A Key-Value pair is created by pairing a predetermined key (such as name, title,
 
 * `title:`               – Title of you paper/webpage/publication
 * `format:`              – The format of your rendered document. There are a wide variety of formats to choose from. A detailed list can be found here: https://quarto.org/docs/output-formats/all-formats.html
-* `toc:`                 – **Toc:true** creates a simple table of contents for your website. the Heading you created via '#' headings are used to create it.
+* `toc:`                 – **Toc:true** creates a simple table of contents for your website. The headings you previously created via '#' are used to create and organize it.
   
 :::
 
@@ -89,7 +89,7 @@ Here is an overview about some commonly used Key-Value pairs:
 
 :::
 
-Now we can use these different options to create a detailled YAML header for ourpaperon the MOMA and its artworks:
+Now that we have a wide array of possible Key-Value pairs, we can use these different options to create a detailled YAML header for our paper on the MOMA and its artworks:
 
 
 ```
@@ -142,14 +142,11 @@ Now we can use these different options to create a detailled YAML header for our
     ---
 ```
 
-After we have added all of our metadata as Key-Value pairs, lets see how the renderes HRML version is in Quarto:
+After this we have added all of our metadata as Key-Value pairs, lets see how the renderes HRML version is in Quarto:
 ![](https://pad.zdv.net/uploads/b40b0560-c46d-46d9-8ff8-66a0e3882eb0.png)
 
 ::: challenge
 ### Exercise
-Try to create a detailed YAML header for your document and render it again to see the difference.
+Try to create a detailed YAML header for your own document and render it again to see the difference.
 :::
-
-
-
 
