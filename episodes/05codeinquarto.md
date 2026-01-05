@@ -48,8 +48,9 @@ You simply need to insert the following part into your Quarto document in order 
     
     ```
 
-If we want to insert a Python based carchart into our paper we can actually use some of the code used in the Python101 couse for our paper. In the couse, a comprehensive database of artworks exibited in the MOMA is used and visualised in various form. 
+If we want to insert a Python based carchart into our paper we can actually use some of the code used in the Python101 course for our paper. In the couse, a comprehensive database of artworks exibited in the MOMA is used and visualised in various form. 
 We can use one of the code chunks used, and modify it for our puposes.
+As Quarto is able to read, render and calculate Python code, you can be creative and use all forms of coding used when writing Python code as a stand alone program.
 The result could look something like this:
 
     ```{Python}
@@ -236,5 +237,3 @@ Python: ##|
 Mermaid: %%|
 Graphviz: //|
 :::
-
-
