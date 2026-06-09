@@ -5,8 +5,8 @@ exercises: 1
 ---
 ::: questions 
 
-- What unique options exists for PDFs in Quarto?
-- What unique iptions exists for HTML in Quarto?
+- What unique options exist for PDFs in Quarto?
+- What unique iptions exist for HTML in Quarto?
   
 :::
 
@@ -17,9 +17,9 @@ exercises: 1
 
 :::
 
-Every different Format of Quarto has its own unique commands and output specific code. These are most often part of the YAML header.
-As there is a large array of possible Ley-Values, makng it possible to customize many different and minute aspects of Quarto, we will only show you some of the more simple and easy to understand Key-value pairs.
-But as the theory behind all YAML pairs and their resulting changes and modifications are the same, you can freely experiment with all offered possibilities to find the options that fit your preferred visual and editorial srtyle.
+Every different format of Quarto has its own unique commands and output specific code. These are most often part of the YAML header.
+As there is a large array of possible Key-Values, making it possible to customize many different and minute aspects of Quarto, we will only show you some of the more simple and easy to understand Key-Value pairs.
+But as the theory behind all YAML pairs and their resulting changes and modifications are the same, you can freely experiment with all offered possibilities to find the options that fit your preferred visual and editorial style.
 
 ## PDF
 
@@ -50,7 +50,7 @@ Book:
 ### Fonts and colours
 
 Quarto allows you to edit every font used by different syntaxes in its YAML header.
-To do so you can add the relevant font type followed by a typeset into the header.
+To do so, you can add the relevant font type followed by a typeset into the header.
 
 For example:
 
